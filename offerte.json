@@ -2,6 +2,30 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1793285135713,
+      "active": true,
+      "brand": "ho mobile",
+      "title": "Offerte Ho Mobile",
+      "price": "a partire €6,95 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "scopri le opportunità di Ho Mobile!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/ho/ho_vert.jpg"
+    },
+    {
+      "id": 1793285127212,
+      "active": true,
+      "brand": "ho mobile",
+      "title": "HO 150GB",
+      "price": "€6,95 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "150GB chiamale illimitate",
+      "expiryDate": "",
+      "pdfUrl": "pdf/ho/ho_6,95.jpg"
+    },
+    {
       "id": 1793274278500,
       "brand": "sky",
       "title": "Tutte le Offerte",
@@ -44,17 +68,6 @@
       "details": "prezzo bloccato per sempre!!!",
       "expiryDate": "",
       "pdfUrl": "pdf/iliad/iliad_fibra.mp4"
-    },
-    {
-      "id": 1793272914475,
-      "brand": "tim",
-      "title": "MNP da operatori Premium",
-      "price": "€7,99 / mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "300 GB e chiamate illimitate in 5G",
-      "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_video.mp4"
     },
     {
       "id": 1793272620810,
@@ -123,17 +136,6 @@
       "pdfUrl": "pdf/very/very_5,99.pdf"
     },
     {
-      "id": 1793269983339,
-      "brand": "TIM",
-      "title": "Offerta WIFI",
-      "price": "a partire da €20,90",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Internet Ultraveloce per la tua casa!!!",
-      "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_video_fibra.mp4"
-    },
-    {
       "id": 1793269752891,
       "brand": "TIM",
       "title": "Offerte Halloween",
@@ -143,6 +145,28 @@
       "details": "Tariffe mostruose!!!!",
       "expiryDate": "",
       "pdfUrl": "pdf/tim/tim_h.mp4"
+    },
+    {
+      "id": 1793272914475,
+      "brand": "tim",
+      "title": "MNP da operatori Premium",
+      "price": "€7,99 / mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "300 GB e chiamate illimitate in 5G",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_video.mp4"
+    },
+    {
+      "id": 1793269983339,
+      "brand": "TIM",
+      "title": "Offerta WIFI",
+      "price": "a partire da €20,90",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Internet Ultraveloce per la tua casa!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_video_fibra.mp4"
     },
     {
       "id": 1793269488273,
@@ -201,6 +225,18 @@
     }
   ],
   "energia": [
+    {
+      "id": 1793284403265,
+      "active": true,
+      "brand": "fastweb",
+      "title": "Luce Fix x Te",
+      "price": "0,119 €/kWh",
+      "badge": "Promo Speciale",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Prezzo fisso bloccato",
+      "expiryDate": "2026-10-30",
+      "pdfUrl": "pdf/lucegas/fastweb_fix.jpg"
+    },
     {
       "id": 101,
       "brand": "Pulsee",
