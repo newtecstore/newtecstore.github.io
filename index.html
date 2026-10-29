@@ -751,9 +751,11 @@
     </div>
 
     <!-- MODALE ADMIN / GESTORE PROTETTA -->
-    <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-slate-900 border border-slate-700 w-full max-w-4xl rounded-2xl p-6 shadow-2xl space-y-8 my-8">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto" onclick="if(event.target === this) closeAdminModal();">
+        <div class="bg-slate-900 border border-cyan-500/40 w-full max-w-4xl max-h-[92vh] rounded-2xl p-6 shadow-2xl space-y-6 my-auto overflow-y-auto relative">
+            
+            <!-- INTESTAZIONE CON TASTO CHIUDI EVIDENTE -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 sticky top-0 bg-slate-900 z-20 pt-2">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg">
                         <i class="fa-solid fa-sliders"></i>
@@ -763,8 +765,8 @@
                         <p class="text-xs text-slate-400">Gestisci, riordina e scarica il file JSON aggiornato per GitHub</p>
                     </div>
                 </div>
-                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-xl p-2">
-                    <i class="fa-solid fa-xmark"></i>
+                <button onclick="closeAdminModal()" class="px-4 py-2 rounded-xl bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition font-bold text-xs flex items-center gap-2 border border-rose-500/30">
+                    <i class="fa-solid fa-xmark text-base"></i> Chiudi Pannello
                 </button>
             </div>
 
@@ -861,18 +863,23 @@
                         </div>
                     </div>
 
-                    <div class="pt-2 flex justify-end gap-3">
-                        <button type="button" onclick="resetForm()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">Annulla / Reset</button>
-                        <button type="submit" id="form-submit-btn" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
-                            <i class="fa-solid fa-plus mr-1"></i> Aggiungi Nuova Offerta
+                    <div class="pt-4 flex justify-between items-center gap-3 border-t border-slate-800">
+                        <button type="button" onclick="closeAdminModal()" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs transition flex items-center gap-2">
+                            <i class="fa-solid fa-right-from-bracket"></i> Esci dall'Area Gestore
                         </button>
+                        <div class="flex gap-3">
+                            <button type="button" onclick="resetForm()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">Annulla / Reset</button>
+                            <button type="submit" id="form-submit-btn" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
+                                <i class="fa-solid fa-plus mr-1"></i> Aggiungi Nuova Offerta
+                            </button>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- LOGICA JAVASCRIPT CON FRECCE SPOSTA SU / GIÙ -->
+    <!-- LOGICA JAVASCRIPT COMPLETA -->
     <script>
         const ADMIN_PIN = "1976"; // Password riservata gestore
 
@@ -1437,14 +1444,12 @@
             if (!list) return;
 
             const newIndex = index + direction;
-            if (newIndex < 0 || newIndex >= list.length) return; // Fuori limite
+            if (newIndex < 0 || newIndex >= list.length) return;
 
-            // Scambia gli elementi nell'array
             const temp = list[index];
             list[index] = list[newIndex];
             list[newIndex] = temp;
 
-            // Aggiorna interfaccia e salva in locale
             renderAdminOffersList();
             renderAllGrids();
 
