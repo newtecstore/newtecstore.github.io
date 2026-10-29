@@ -2,10 +2,142 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
-      "id": 1793265996572,
+      "id": 1793273723144,
+      "brand": "sky",
+      "title": "Bundle sky mobile + wifi",
+      "price": "€29,90 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Wifi e Mobile con Giga illimitati in 5G",
+      "expiryDate": "",
+      "pdfUrl": "pdf/sky/sky_mf.pdf"
+    },
+    {
+      "id": 1793273562072,
+      "brand": "sky",
+      "title": "Mobile Ultra 5G",
+      "price": "€9,90 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "250GB minuti e sms illimitati in 5G",
+      "expiryDate": "",
+      "pdfUrl": "pdf/sky/sky_m.pdf"
+    },
+    {
+      "id": 1793273088348,
+      "brand": "iliad",
+      "title": "Iliad BOX",
+      "price": "a partire da €22,99 x sempre",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "prezzo bloccato per sempre!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/iliad/iliad_fibra.mp4"
+    },
+    {
+      "id": 1793272914475,
+      "brand": "tim",
+      "title": "MNP da operatori Premium",
+      "price": "€7,99 / mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "300 GB e chiamate illimitate in 5G",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_video.mp4"
+    },
+    {
+      "id": 1793272620810,
+      "brand": "iliad",
+      "title": "Fibra Domotica",
+      "price": "a partire da €23,99 /mese X sempre",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Fibra veloce e sim x domotica",
+      "expiryDate": "2027-01-28",
+      "pdfUrl": "pdf/iliad/iliad_domo.mp4"
+    },
+    {
+      "id": 1793272143846,
+      "brand": "iliad",
+      "title": "Giga 150",
+      "price": "€7,99 / mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "150Gb minutie sms illimitati",
+      "expiryDate": "",
+      "pdfUrl": "pdf/iliad/iliad_giga150.mp4"
+    },
+    {
+      "id": 1793272068421,
+      "brand": "iliad",
+      "title": "Giga Top in 5G",
+      "price": "€9,99 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "230Gb chiamate e sms illimitati in 5G",
+      "expiryDate": "2026-10-29",
+      "pdfUrl": "pdf/iliad/iliad_top.mp4"
+    },
+    {
+      "id": 1793270639122,
+      "brand": "very",
+      "title": "Fibra Multiservice",
+      "price": "€19,99 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Cliente Very Mobile & Luce/Gas",
+      "expiryDate": "",
+      "pdfUrl": "pdf/very/very_multiservice.jpg"
+    },
+    {
+      "id": 1793270463309,
+      "brand": "Very",
+      "title": "Very 200GB MNP da Iliad / MVNO",
+      "price": "€6,99 /mese + 1 mese gratis",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "200GB su rete WindTre, minuti e SMS illimitati.",
+      "expiryDate": "",
+      "pdfUrl": "pdf/very/very_6,99.pdf"
+    },
+    {
+      "id": 1793270297600,
+      "brand": "very",
+      "title": "Very 150GB MNP da Iliad / MVNO",
+      "price": "€5,99 / mese + 1 mese gratis",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "150GB su rete WindTre, minuti e SMS illimitati.",
+      "expiryDate": "",
+      "pdfUrl": "pdf/very/very_5,99.pdf"
+    },
+    {
+      "id": 1793269983339,
       "brand": "TIM",
-      "title": "MNP da Iliad / MVNO",
-      "price": "a partire da €4,99 /mese",
+      "title": "Offerta WIFI",
+      "price": "a partire da €20,90",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Internet Ultraveloce per la tua casa!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_video_fibra.mp4"
+    },
+    {
+      "id": 1793269752891,
+      "brand": "TIM",
+      "title": "Offerte Halloween",
+      "price": "a partire da € 4,99 /mese",
+      "badge": "Promo Speciale",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Tariffe mostruose!!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_h.mp4"
+    },
+    {
+      "id": 1793269488273,
+      "brand": "TIM",
+      "title": "MNP da Iliad o MVNO",
+      "price": "a partire da € 4,99 /mese",
       "badge": "In Vigore",
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "Scegli la tua offerta finoa 350GB in 5G",
@@ -24,39 +156,6 @@
       "expiryDate": ""
     },
     {
-      "id": 2,
-      "brand": "Very",
-      "title": "Very 150 Giga",
-      "price": "€5,99 / mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-      "details": "150GB su rete WindTre, minuti e SMS illimitati.",
-      "pdfUrl": "pdf/very.pdf",
-      "expiryDate": ""
-    },
-    {
-      "id": 3,
-      "brand": "Iliad",
-      "title": "Giga 180 in 5G",
-      "price": "€9,99 / mese",
-      "badge": "Novità Mese",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "180 Giga in 5G, Minuti e SMS illimitati senza sorprese.",
-      "pdfUrl": "pdf/iliad.pdf",
-      "expiryDate": ""
-    },
-    {
-      "id": 4,
-      "brand": "TIM",
-      "title": "5G Power Unlimited",
-      "price": "€14,99 / mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-      "details": "Giga Illimitati in 5G con priorità di rete.",
-      "pdfUrl": "pdf/tim_mobile.pdf",
-      "expiryDate": ""
-    },
-    {
       "id": 5,
       "brand": "Sky",
       "title": "Sky Wifi Ultra",
@@ -70,13 +169,13 @@
     {
       "id": 6,
       "brand": "Kena",
-      "title": "Kena 200 Giga Promo",
-      "price": "€6,99 / mese",
+      "title": "nuova SIM o MNP",
+      "price": "a partire €4,99 / mese",
       "badge": "Novità Mese",
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "200 Giga in 4G su rete TIM, minuti illimitati.",
-      "pdfUrl": "pdf/kena.pdf",
-      "expiryDate": ""
+      "details": "tutte le offerte KENA",
+      "expiryDate": "",
+      "pdfUrl": "pdf/kena/kena_video.mp4"
     },
     {
       "id": 7,
