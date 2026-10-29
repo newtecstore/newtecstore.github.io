@@ -2,249 +2,108 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
-      "brand": "kena",
-      "title": "Da Vodafone, Ho mobile, Fastweb, Iliad e MVNO",
-      "price": "€5,99 /mese 1 mese Gratis",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "chiamate illimitate 200sms 100gb 5G zero attivazione",
-      "expiryDate": "",
-      "pdfUrl": "pdf/kena/kena_5,99.jpeg",
-      "id": 1792828327802
-    },
-    {
-      "brand": "iliad",
-      "title": "Giga 150",
-      "price": "€7,99 /mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "minuti e sms illimitati 150GB",
-      "expiryDate": "",
-      "pdfUrl": "pdf/iliad/iliad_giga150.mp4",
-      "id": 1792595257731
-    },
-    {
-      "brand": "very",
-      "title": "Very 5,99 x MNP da MVNO",
-      "price": "€ 5,99 /mese 1 mese omaggio",
-      "badge": "Novità Mese",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "minuti illimitate - 200 sms - 150GB in 5G att. €0,99",
-      "expiryDate": "2026-11-05",
-      "pdfUrl": "pdf/very/very_5,99.pdf",
-      "id": 1792594604961
-    },
-    {
-      "brand": "very",
-      "title": "Very Special x MNP da MVNO",
-      "price": "€4,99 /mese att. 0",
-      "badge": "Promo Speciale",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Minuti illimitati - 200 sms - 150GB 5G",
-      "expiryDate": "",
-      "pdfUrl": "pdf/very/very_special.png",
-      "id": 1792594398653
-    },
-    {
-      "brand": "ILIAD",
-      "title": "Top 230",
-      "price": "€ 9,99 /mese",
-      "badge": "Promo Speciale",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "chiamate e sms illimitate + 230GB in 5G",
-      "expiryDate": "2026-10-29",
-      "pdfUrl": "pdf/iliad/iliad_top.mp4",
-      "id": 1792580931596
-    },
-    {
-      "brand": "SKY",
-      "title": "Tutte le offerte del mometo",
-      "price": "scegli l tuo pack",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Scopri tutte le offerte si ottobre 2026",
-      "expiryDate": "2026-10-31",
-      "pdfUrl": "pdf/sky/sky_ottobre.pdf",
-      "id": 1792580290797
-    },
-    {
-      "brand": "SKY",
-      "title": "SKY Mobile Ultra",
-      "price": "€ 9,90 /mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "chiamate illimitate 200sms 250GB in 5G",
-      "expiryDate": "",
-      "pdfUrl": "pdf/sky/sky_m.png",
-      "id": 1792579988889
-    },
-    {
-      "brand": "SKY",
-      "title": "Fibra + Mobile +TV intrattenimento",
-      "price": "€ 35,90 /mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Scegli la Fibra senza attivazione e serie TV on deman",
-      "expiryDate": "",
-      "pdfUrl": "pdf/sky/sky_fmt.png",
-      "id": 1792579802094
-    },
-    {
-      "brand": "Very",
-      "title": "Fibra Promo Multiservice",
-      "price": "€ 19,99 /mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "per i clienti Very che scelgono Fibra e Luce/Gas WINDTRE",
-      "expiryDate": "",
-      "pdfUrl": "pdf/very/very_multiservice.png",
-      "id": 1792577492784
-    },
-    {
-      "brand": "Windtre",
-      "title": "MNP da Iliad o MVNO",
-      "price": "€ 6,99",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Chiamate illimitate 50 sms e 250GB in 5G",
-      "expiryDate": "",
-      "pdfUrl": "pdf/wind/wind_extra.pdf",
-      "id": 1792574987343
-    },
-    {
-      "brand": "TIM",
-      "title": "Offerta WIFI",
-      "price": "a partire da €20,90",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Internet Ultraveloce per la tua casa!!!",
-      "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_video_fibra.mp4",
-      "id": 1792571883067
-    },
-    {
+      "id": 1793265996572,
       "brand": "TIM",
       "title": "MNP da Iliad / MVNO",
-      "price": "a partire da € 4,99 /mese",
+      "price": "a partire da €4,99 /mese",
       "badge": "In Vigore",
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Scegli la tua offerta fino a 350GB in 5G",
+      "details": "Scegli la tua offerta finoa 350GB in 5G",
       "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_videov.mp4",
-      "id": 1792571854915
+      "pdfUrl": "pdf/tim/tim_videov.mp4"
     },
     {
-      "brand": "TIM",
-      "title": "MNP da Opertori Premium",
-      "price": "€ 7,99 /mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "chiamate illimitate e 300 GB in 5G dai principali operatori",
-      "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_video.mp4",
-      "id": 1792571760003
-    },
-    {
-      "brand": "fastweb",
-      "title": "prova",
-      "price": "10€",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "sdfr",
-      "pdfUrl": "kj",
-      "id": 1792516515248
-    },
-    {
-      "brand": "KENA",
-      "title": "Nuova sim o MNP",
-      "price": "a partire da € 4,99",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Visualizza tutte le offerte KENA",
-      "expiryDate": "",
-      "pdfUrl": "pdf/kena/kena_video.mp4",
-      "id": 1792516405584
-    },
-    {
-      "brand": "HO MOBILE",
-      "title": "HO 5,99",
-      "price": "€5,99",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "PROV",
-      "pdfUrl": "1",
-      "id": 1792516360630
-    },
-    {
-      "brand": "iliad",
-      "title": "IliadBox",
-      "price": "€ 22,99 /mese X SEMPRE",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Fibra Ultra veloce con router WiFi 7",
-      "expiryDate": "",
-      "pdfUrl": "pdf/iliad/iliad_fibra.mp4",
-      "id": 1792508469299
-    },
-    {
-      "brand": "SKY",
-      "title": "SKY Mobile + Fibra",
-      "price": "€ 29,90 /mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Porta il tuo numero mobile e scegli Fibra",
-      "expiryDate": "",
-      "pdfUrl": "pdf/sky/sky_fm.png",
-      "id": 1792494556179
-    },
-    {
-      "brand": "TIM",
-      "title": "5G Power Unlimited",
-      "price": "€14,99 / mese",
-      "badge": "Novità Mese",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Giga Illimitati in 5G, Minuti e SMS illimitati.",
-      "expiryDate": "2026-10-22",
-      "pdfUrl": "pdf/tim_mobile.pdf",
-      "id": 1
-    },
-    {
-      "id": 2,
+      "id": 1,
       "brand": "WindTre",
       "title": "Super Fibra & Mobile",
       "price": "€22,99 / mese",
       "badge": "Promo Speciale",
       "badgeColor": "bg-purple-500/20 text-purple-400 border-purple-500/30",
-      "details": "Fibra fino a 2.5 Gbps + Modem Wi-Fi 6 incluso.",
-      "pdfUrl": "pdf/windtre_fibra.pdf",
-      "logoBg": "bg-orange-500"
+      "details": "Fibra fino a 2.5 Gbps + Giga Illimitati per i già clienti.",
+      "pdfUrl": "pdf/wind3_fibra.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 2,
+      "brand": "Very",
+      "title": "Very 150 Giga",
+      "price": "€5,99 / mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "details": "150GB su rete WindTre, minuti e SMS illimitati.",
+      "pdfUrl": "pdf/very.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 3,
+      "brand": "Iliad",
+      "title": "Giga 180 in 5G",
+      "price": "€9,99 / mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "180 Giga in 5G, Minuti e SMS illimitati senza sorprese.",
+      "pdfUrl": "pdf/iliad.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 4,
+      "brand": "TIM",
+      "title": "5G Power Unlimited",
+      "price": "€14,99 / mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "details": "Giga Illimitati in 5G con priorità di rete.",
+      "pdfUrl": "pdf/tim_mobile.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 5,
+      "brand": "Sky",
+      "title": "Sky Wifi Ultra",
+      "price": "€24,90 / mese",
+      "badge": "Promo Speciale",
+      "badgeColor": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      "details": "Fibra Ultraveloce senza vincoli con modem Wifi Sphera.",
+      "pdfUrl": "pdf/sky_wifi.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 6,
+      "brand": "Kena",
+      "title": "Kena 200 Giga Promo",
+      "price": "€6,99 / mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "200 Giga in 4G su rete TIM, minuti illimitati.",
+      "pdfUrl": "pdf/kena.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 7,
+      "brand": "Ho Mobile",
+      "title": "ho. 180 Giga 5G",
+      "price": "€7,99 / mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "details": "180 Giga in 5G su rete Vodafone, riparti quando vuoi.",
+      "pdfUrl": "pdf/homobile.pdf",
+      "expiryDate": ""
     }
   ],
   "energia": [
     {
-      "brand": "pulsee",
-      "title": "FIX 144 - 36 mesi",
-      "price": "0,16525 €/kwh - 0,870€/smc",
-      "badge": "Promo Speciale",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Prezzo fisso bloccato x 36 mesi e energimetro incluso",
-      "expiryDate": "",
-      "pdfUrl": "pdf/lucegas/pulsee_fix144_2.pdf",
-      "id": 1792660447807
-    },
-    {
-      "brand": "PULSEE",
-      "title": "FIX 144 -36 MESI",
-      "price": "0,17195€/kwh / 0,884€/smc",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Prezzo fisso bloccato x 36 mesi e energimetro incluso",
-      "expiryDate": "2026-10-21",
-      "pdfUrl": "pdf/lucegas/pulsee_fix144.pdf",
-      "id": 1792597968179
-    },
-    {
       "id": 101,
+      "brand": "Pulsee",
+      "title": "FIX 144 -36 MESI",
+      "price": "0,17195€/kWh / 0,884€/smc",
+      "badge": "In Vigore",
+      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "details": "Prezzo fisso bloccato x 36 mesi e energimetro incluso",
+      "pdfUrl": "pdf/pulsee.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 102,
       "brand": "Enel Energia",
       "title": "Formidabile Luce Flex",
       "price": "Prezzo di Costo + Fee",
@@ -252,45 +111,81 @@
       "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
       "details": "Energia 100% da fonti rinnovabili.",
       "pdfUrl": "pdf/enel_luce.pdf",
-      "logoBg": "bg-blue-500"
-    }
-  ],
-  "smartphone": [
+      "expiryDate": ""
+    },
     {
-      "id": 201,
-      "brand": "Apple",
-      "title": "iPhone 15 128GB",
-      "price": "€29,90 / mese",
-      "badge": "Zero Anticipo",
-      "badgeColor": "bg-blue-500/20 text-blue-400 border-blue-500/30",
-      "details": "Abbinabile a qualsiasi offerta in negozio.",
-      "pdfUrl": "pdf/listino_smartphone.pdf",
-      "logoBg": "bg-slate-700"
+      "id": 103,
+      "brand": "Plenitude",
+      "title": "Trend Casa Luce & Gas",
+      "price": "Tariffa Indicizzata PUN",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Sconto fedeltà in bolletta.",
+      "pdfUrl": "pdf/plenitude.pdf",
+      "expiryDate": ""
     }
   ],
   "rateizzi": [
     {
-      "brand": "TIM",
-      "title": "IPHONE 17 256GB",
-      "price": "30 X 15€ ANTICIPO ZERO",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "garanzia Kasko inclusa",
-      "pdfUrl": "1",
-      "id": 1792509017222
+      "id": 201,
+      "brand": "Apple",
+      "title": "iPhone 15 128GB (Rate)",
+      "price": "€29,90 / mese",
+      "badge": "Zero Anticipo",
+      "badgeColor": "bg-blue-500/20 text-blue-400 border-blue-500/30",
+      "details": "Abbinabile a offerta TIM o WindTre. Kasko inclusa.",
+      "pdfUrl": "pdf/rate_iphone.pdf",
+      "expiryDate": ""
+    },
+    {
+      "id": 202,
+      "brand": "Samsung",
+      "title": "Galaxy S24 5G (Rate)",
+      "price": "€24,90 / mese",
+      "badge": "Promo Mese",
+      "badgeColor": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      "details": "Rateizzazione in bolletta con operatore telefonico.",
+      "pdfUrl": "pdf/rate_samsung.pdf",
+      "expiryDate": ""
+    }
+  ],
+  "noleggio": [
+    {
+      "id": 501,
+      "brand": "Apple",
+      "title": "iPhone 15 Pro 128GB (Noleggio)",
+      "price": "€39,00 / mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-amber-500/20 text-amber-400 border-amber-500/30",
+      "details": "Zero anticipo, Assicurazione Kasko/Furto inclusa. Deducibile al 100% per P.IVA.",
+      "pdfUrl": "pdf/noleggio_iphone.pdf",
+      "expiryDate": ""
     }
   ],
   "contanti": [
     {
-      "brand": "Apple",
-      "title": "iPhone 13 128GB Grado A+",
-      "price": "€299,90",
+      "id": 301,
+      "brand": "Xiaomi",
+      "title": "Redmi Note 13 Pro",
+      "price": "€249,00 cash",
       "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Offerta Rigenerato",
-      "expiryDate": "",
-      "pdfUrl": "pdf/device/iphone13_rig.jpg",
-      "id": 1792829079136
+      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "details": "Disponibile subito in negozio senza vincoli né abbonamenti.",
+      "pdfUrl": "pdf/xiaomi_cash.pdf",
+      "expiryDate": ""
+    }
+  ],
+  "accessori": [
+    {
+      "id": 401,
+      "brand": "JBL",
+      "title": "Cuffie Tune Flex TWS",
+      "price": "€79,99",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      "details": "Cancellazione attiva del rumore, custodia di ricarica.",
+      "pdfUrl": "pdf/accessori.pdf",
+      "expiryDate": ""
     }
   ]
 }
