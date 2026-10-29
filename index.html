@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewTecStore - Offerte Telefonia, Luce & Gas, Smartphone</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B0F17',
+                            card: '#161F30',
+                            accent: '#00A3E0',
+                            red: '#E52320',
+                            silver: '#A0AEC0',
+                            emerald: '#10b981',
+                            purple: '#8b5cf6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(22, 31, 48, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 23, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 25px rgba(0, 163, 224, 0.35);
+        }
+        .glow-effect-red:hover {
+            box-shadow: 0 0 25px rgba(229, 35, 32, 0.35);
+        }
+        .glow-effect-green:hover {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00A3E0;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Nav -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('home')">
+                    <img id="nav-logo-img" src="logo.png" alt="NewTecStore Logo" class="h-12 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,163,224,0.3)]" onerror="this.onerror=null; this.src='new tec.png';">
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <button onclick="navigateTo('home')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition hover:text-cyan-400 text-cyan-400" id="nav-home">
+                        <i class="fa-solid fa-house mr-1.5"></i> Home
+                    </button>
+                    <button onclick="navigateTo('telefonia')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-telefonia">
+                        <i class="fa-solid fa-mobile-screen-button mr-1.5"></i> Telefonia & Fibra
+                    </button>
+                    <button onclick="navigateTo('energia')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-energia">
+                        <i class="fa-solid fa-bolt mr-1.5"></i> Luce & Gas
+                    </button>
+                    <button onclick="navigateTo('smartphone')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-smartphone">
+                        <i class="fa-solid fa-cart-shopping mr-1.5"></i> Promo Devices
+                    </button>
+                    <button onclick="navigateTo('volantino')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-volantino">
+                        <i class="fa-solid fa-book-open mr-1.5"></i> Volantino
+                    </button>
+                </nav>
+
+                <!-- Admin & Contact CTA -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button onclick="checkAdminAccess()" class="px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-300 text-xs font-semibold hover:border-cyan-500 hover:text-cyan-400 transition flex items-center gap-2">
+                        <i class="fa-solid fa-lock text-cyan-400"></i> Area Gestore
+                    </button>
+                    <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20vorrei%20informazioni%20sulle%20offerte" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-white text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> Contattaci
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button onclick="checkAdminAccess()" class="p-2 rounded-lg bg-slate-800 text-cyan-400 text-sm" title="Area Gestore">
+                        <i class="fa-solid fa-lock"></i>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 pt-2 pb-6 space-y-2">
+            <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i class="fa-solid fa-house text-cyan-400 w-5"></i> Home
+            </button>
+            <button onclick="navigateTo('telefonia'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i class="fa-solid fa-mobile-screen-button text-cyan-400 w-5"></i> Telefonia & Fibra
+            </button>
+            <button onclick="navigateTo('energia'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i class="fa-solid fa-bolt text-cyan-400 w-5"></i> Offerte Luce & Gas
+            </button>
+            <button onclick="navigateTo('smartphone'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i class="fa-solid fa-cart-shopping text-cyan-400 w-5"></i> Promo Devices & Accessori
+            </button>
+            <button onclick="navigateTo('volantino'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i class="fa-solid fa-book-open text-cyan-400 w-5"></i> Volantino del Mese
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow">
+        
+        <!-- HOME SECTION -->
+        <section id="sec-home" class="view-section">
+            <div class="relative overflow-hidden py-10 lg:py-16">
+                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[30rem] h-[30rem] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute top-1/3 right-10 w-80 h-80 bg-red-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="text-center max-w-3xl mx-auto space-y-6">
+                        
+                        <div class="flex justify-center mb-2">
+                            <img id="hero-logo-img" src="logo.png" alt="NewTecStore Logo Hero" class="h-28 sm:h-32 w-auto object-contain drop-shadow-[0_4px_25px_rgba(0,163,224,0.35)]" onerror="this.onerror=null; this.src='new tec.png';">
+                        </div>
+
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold tracking-wide">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
+                            Prospetti e Tariffe Ufficiali Sempre Aggiornati
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                            Trova la promo perfetta per le tue <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-rose-500">esigenze</span>
+                        </h1>
+                        
+                        <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
+                            Benvenuto nel portale delle promozioni di <strong>NewTecStore</strong>. Sfoglia, confronta e consulta le schede trasparenti di Telefonia, Fibra, Luce e Gas forniti direttamente dai gestori partner.
+                        </p>
+
+                        <!-- CASSELLA DI RICERCA GLOBALE -->
+                        <div class="pt-2 max-w-xl mx-auto">
+                            <div class="relative flex items-center">
+                                <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400"></i>
+                                <input type="text" id="quick-search" onkeydown="if(event.key === 'Enter') handleQuickSearch()" placeholder="Cerca ovunque (es. TIM, iPhone, Pulsee, Sky, Kena...)" class="w-full bg-slate-900/90 border border-slate-700/80 rounded-2xl py-3.5 pl-12 pr-28 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition shadow-inner">
+                                <button onclick="handleQuickSearch()" class="absolute right-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
+                                    Cerca
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div onclick="navigateTo('telefonia')" class="glass-card rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-cyan-500/10 transition">
+                                <i class="fa-solid fa-tower-cell text-9xl"></i>
+                            </div>
+                            <div class="w-14 h-14 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors duration-300">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Telefonia & Fibra</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Scegli tra i nostri operatori top partner: WindTre, Iliad, TIM, Sky, Very, Kena, Ho. Mobile.</p>
+                            <span class="inline-flex items-center text-sm font-semibold text-cyan-400 group-hover:translate-x-1 transition">
+                                Sfoglia Operatori <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </span>
+                        </div>
+
+                        <div onclick="navigateTo('energia')" class="glass-card rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-green group relative overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-emerald-500/10 transition">
+                                <i class="fa-solid fa-bolt text-9xl"></i>
+                            </div>
+                            <div class="w-14 h-14 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors duration-300">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition">Luce & Gas</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Risparmia sulle utenze domestiche e aziendali. Plenitude, Enel, Pulsee e tariffe bloccate.</p>
+                            <span class="inline-flex items-center text-sm font-semibold text-emerald-400 group-hover:translate-x-1 transition">
+                                Scopri Risparmio <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </span>
+                        </div>
+
+                        <div onclick="navigateTo('smartphone')" class="glass-card rounded-2xl p-6 hover:border-rose-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-red group relative overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-rose-500/10 transition">
+                                <i class="fa-solid fa-laptop text-9xl"></i>
+                            </div>
+                            <div class="w-14 h-14 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-400 transition">Promo Devices</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Smartphone a rate, Noleggio Operativo, acquisto in contanti senza vincoli e accessori.</p>
+                            <span class="inline-flex items-center text-sm font-semibold text-rose-400 group-hover:translate-x-1 transition">
+                                Vedi Prodotti <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </span>
+                        </div>
+
+                        <div onclick="navigateTo('volantino')" class="glass-card rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
+                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-purple-500/10 transition">
+                                <i class="fa-solid fa-file-pdf text-9xl"></i>
+                            </div>
+                            <div class="w-14 h-14 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition">Volantino Mese</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Sfoglia il volantino cartaceo e digitale completo con tutte le promozioni del mese.</p>
+                            <span class="inline-flex items-center text-sm font-semibold text-purple-400 group-hover:translate-x-1 transition">
+                                Apri Volantino <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-14 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-cyan-500/30 rounded-3xl p-6 lg:p-10 relative overflow-hidden shadow-2xl">
+                        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                            <div class="space-y-3 text-center lg:text-left">
+                                <span class="px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 text-xs font-bold uppercase tracking-wider">Servizio In Store Gratis</span>
+                                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Non sai quale gestore o tariffa scegliere?</h2>
+                                <p class="text-slate-300 max-w-2xl text-sm sm:text-base">Porta la tua ultima bolletta o la tua sim attuale in negozio. Effettuiamo un'analisi gratuita dei costi senza alcun impegno!</p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                                <a href="https://wa.me/393330000000?text=Vorrei%20fissare%20un%20appuntamento%20per%20un%20confronto%20bolletta" target="_blank" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm text-center transition shadow-lg shadow-cyan-500/25">
+                                    <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Richiedi Consulenza
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE RISULTATI RICERCA GLOBALE -->
+        <section id="sec-search-results" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <div>
+                            <h2 id="search-results-title" class="text-2xl sm:text-3xl font-black text-white">Risultati Ricerca</h2>
+                            <p class="text-xs text-slate-400 mt-0.5">Tutte le promozioni e i prodotti corrispondenti in archivio</p>
+                        </div>
+                    </div>
+                    <button onclick="navigateTo('home')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold transition flex items-center gap-2 border border-slate-700 w-fit">
+                        <i class="fa-solid fa-arrow-left"></i> Torna alla Home
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-search-results"></div>
+            </div>
+        </section>
+
+        <!-- TELEFONIA SECTION -->
+        <section id="sec-telefonia" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <div id="telefonia-brands-landing" class="space-y-8">
+                    <div class="text-center max-w-2xl mx-auto space-y-3">
+                        <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 font-bold text-xs uppercase tracking-wider">Gestori Partner Ufficiali</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white">Seleziona il Tuo Operatore</h2>
+                        <p class="text-slate-400 text-sm">Clicca sul logo del gestore per scoprire tutte le tariffe e i prospetti trasparenti attivi questo mese.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 pt-4" id="telefonia-brands-grid"></div>
+                </div>
+
+                <div id="telefonia-selected-brand-view" class="hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                        <div class="flex items-center gap-4">
+                            <div id="brand-view-logo" class="shrink-0"></div>
+                            <div>
+                                <h2 id="brand-view-title" class="text-2xl sm:text-3xl font-black text-white">Offerte Gestore</h2>
+                                <p class="text-xs text-slate-400 mt-0.5">Promozioni esclusive e prospetti informativi trasparenti</p>
+                            </div>
+                        </div>
+                        <button onclick="resetTelefoniaBrandView()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold transition flex items-center gap-2 border border-slate-700 w-fit">
+                            <i class="fa-solid fa-arrow-left"></i> Mostra Tutti i Gestori
+                        </button>
+                    </div>
+
+                    <!-- FILTRI RAPIDI A PULSANTE -->
+                    <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="telefonia-quick-filters"></div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-telefonia-brand"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ENERGIA SECTION -->
+        <section id="sec-energia" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-800 pb-6 gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-1 uppercase tracking-wider">
+                            <i class="fa-solid fa-bolt"></i> Risparmio Energetico
+                        </div>
+                        <h2 class="text-3xl font-black text-white">Offerte Luce & Gas</h2>
+                        <p class="text-slate-400 text-sm mt-1">Tariffe a prezzo fisso e indicizzato con prospetti trasparenti.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-energia"></div>
+
+                <!-- BOX DEDICATO: ANALISI & PREVENTIVO BOLLETTA VIA EMAIL -->
+                <div class="mt-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-emerald-500/40 rounded-3xl p-6 lg:p-10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                        <div class="lg:col-span-6 space-y-4 text-center lg:text-left">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold uppercase tracking-wider">Servizio Gratuito In Store & Online</span>
+                            <h3 class="text-2xl sm:text-3xl font-black text-white">Vuoi tagliare i costi in bolletta? Inviaci la tua fattura!</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                I nostri esperti analizzeranno gratuitamente i tuoi consumi attuali per verificare se stai pagando troppo. 
+                                Compila il modulo accanto per inviarci la bolletta direttamente via email, oppure usa WhatsApp per una risposta immediata.
+                            </p>
+                            <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                                <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20vorrei%20informazioni%20sulle%20offerte%20Luce%20e%20Gas" target="_blank" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-lg"></i> Contatta via WhatsApp
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Form Reale collegato via Email -->
+                        <div class="lg:col-span-6 bg-slate-950/80 border border-slate-800 p-6 rounded-2xl shadow-inner space-y-4">
+                            <h4 class="font-bold text-white text-base flex items-center gap-2">
+                                <i class="fa-solid fa-file-invoice text-emerald-400"></i> Richiedi Preventivo via Email
+                            </h4>
+                            <form action="https://formspree.io/f/x_form_test_placeholder" method="POST" enctype="multipart/form-data" class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Il tuo Nome e Cognome</label>
+                                    <input type="text" name="nome" placeholder="es. Mario Rossi" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Recapito Telefonico</label>
+                                        <input type="tel" name="telefono" placeholder="es. 333 1234567" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Tipo Utenza</label>
+                                        <select name="utenza" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
+                                            <option value="Luce e Gas">⚡ Luce & Gas</option>
+                                            <option value="Solo Luce">💡 Solo Luce</option>
+                                            <option value="Solo Gas">🔥 Solo Gas</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Allega Foto o PDF Bolletta</label>
+                                    <input type="file" name="bolletta" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-500/20 file:text-emerald-400 hover:file:bg-emerald-500/30 file:cursor-pointer">
+                                </div>
+                                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i> Invia Richiesta e Bolletta
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SMARTPHONE & ACCESSORI SECTION -->
+        <section id="sec-smartphone" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                
+                <div id="device-landing-cards" class="space-y-8">
+                    <div class="text-center max-w-2xl mx-auto space-y-3">
+                        <span class="px-3 py-1 rounded-full bg-rose-500/20 text-rose-400 font-bold text-xs uppercase tracking-wider">Catalogo Hardware</span>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white">Scegli la Categoria di Tuo Interesse</h2>
+                        <p class="text-slate-400 text-sm">Clicca su una delle opzioni sottostanti per accedere direttamente all'elenco delle promozioni o richiedere un preventivo.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+                        <div onclick="selectDeviceCategory('rateizzi')" class="glass-card rounded-3xl p-6 hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group text-center space-y-4 glow-effect">
+                            <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 mx-auto flex items-center justify-center text-3xl group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">Smartphone a Rate</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">Rateizzazioni ufficiali abbinate alle offerte dei gestori partner.</p>
+                            <span class="inline-flex items-center text-xs font-bold text-cyan-400 pt-2 group-hover:translate-x-1 transition">
+                                Accedi alle Offerte <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                            </span>
+                        </div>
+
+                        <div onclick="selectDeviceCategory('noleggio')" class="glass-card rounded-3xl p-6 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group text-center space-y-4 glow-effect">
+                            <div class="w-16 h-16 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30 mx-auto flex items-center justify-center text-3xl group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition">Noleggio Smartphone</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">Smartphone sempre nuovo per Privati e Partite IVA. Kasko & Furto inclusi!</p>
+                            <span class="inline-flex items-center text-xs font-bold text-amber-400 pt-2 group-hover:translate-x-1 transition">
+                                Richiedi Preventivo <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                            </span>
+                        </div>
+
+                        <div onclick="selectDeviceCategory('contanti')" class="glass-card rounded-3xl p-6 hover:border-emerald-500 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group text-center space-y-4 glow-effect-green">
+                            <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 mx-auto flex items-center justify-center text-3xl group-hover:bg-emerald-500 group-hover:text-slate-950 transition">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition">Senza Vincoli (Cash)</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">Acquisto diretto in contanti dei migliori dispositivi subito in store.</p>
+                            <span class="inline-flex items-center text-xs font-bold text-emerald-400 pt-2 group-hover:translate-x-1 transition">
+                                Accedi alle Offerte <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                            </span>
+                        </div>
+
+                        <div onclick="selectDeviceCategory('accessori')" class="glass-card rounded-3xl p-6 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group text-center space-y-4 glow-effect">
+                            <div class="w-16 h-16 rounded-2xl bg-purple-500/20 text-purple-400 border border-purple-500/30 mx-auto flex items-center justify-center text-3xl group-hover:bg-purple-500 group-hover:text-white transition">
+                                <i class="fa-solid fa-headphones"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition">Accessori in Store</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">Cover protettive, vetri temprati, audio e caricatori in negozio.</p>
+                            <span class="inline-flex items-center text-xs font-bold text-purple-400 pt-2 group-hover:translate-x-1 transition">
+                                Accedi agli Accessori <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEZIONE NOLEGGIO CON FORM DEDICATO -->
+                <div id="device-noleggio-view" class="hidden space-y-8">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl sm:text-3xl font-black text-white">Noleggio Operativo Smartphone</h2>
+                                <p class="text-xs text-slate-400">Zero anticipo, Kasko e Furto inclusi e smartphone nuovo ogni 12 o 24 mesi</p>
+                            </div>
+                        </div>
+                        <button onclick="resetDeviceView()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold transition flex items-center gap-2 border border-slate-700 w-fit">
+                            <i class="fa-solid fa-arrow-left"></i> Torna alle Categorie
+                        </button>
+                    </div>
+
+                    <!-- BOX PRESENTAZIONE + FORM NOLEGGIO -->
+                    <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-amber-500/40 rounded-3xl p-6 lg:p-10 shadow-2xl relative overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            
+                            <div class="lg:col-span-6 space-y-5 text-center lg:text-left">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider">La Nuova Formula Smart</span>
+                                <h3 class="text-2xl sm:text-3xl font-black text-white">Perché conviene scegliere il Noleggio?</h3>
+                                
+                                <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-400 mt-1"></i> <span><strong>Nessun anticipo</strong> e canone mensile fisso.</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-400 mt-1"></i> <span><strong>Assicurazione Kasko & Furto integrata</strong> contro qualsiasi danno accidentale.</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-400 mt-1"></i> <span><strong>Cambio Modello</strong> ogni 12 o 24 mesi con l'ultimo uscito.</span></li>
+                                    <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-amber-400 mt-1"></i> <span><strong>Deducibile al 100%</strong> per aziende, professionisti e Partite IVA.</span></li>
+                                </ul>
+
+                                <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                                    <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20vorrei%20informazioni%20sul%20noleggio%20di%20uno%20smartphone" target="_blank" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm text-center transition shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i> Richiedi su WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- FORM DI RICHIESTA PREVENTIVO NOLEGGIO -->
+                            <div class="lg:col-span-6 bg-slate-950/80 border border-slate-800 p-6 rounded-2xl shadow-inner space-y-4">
+                                <h4 class="font-bold text-white text-base flex items-center gap-2">
+                                    <i class="fa-solid fa-calculator text-amber-400"></i> Calcola il tuo Preventivo Noleggio
+                                </h4>
+                                <form action="https://formspree.io/f/x_form_test_placeholder" method="POST" class="space-y-3">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label class="block text-xs font-medium text-slate-300 mb-1">Nome e Cognome / Ditta</label>
+                                            <input type="text" name="cliente" placeholder="es. Mario Rossi" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-slate-300 mb-1">Telefono</label>
+                                            <input type="tel" name="telefono" placeholder="es. 333 1234567" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label class="block text-xs font-medium text-slate-300 mb-1">Profilo Cliente</label>
+                                            <select name="tipo_cliente" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                                <option value="Privato">👤 Privato</option>
+                                                <option value="Partita IVA / Azienda">💼 Partita IVA / Azienda</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-medium text-slate-300 mb-1">Durata Desiderata</label>
+                                            <select name="durata" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                                <option value="12 Mesi">12 Mesi</option>
+                                                <option value="24 Mesi" selected>24 Mesi (Consigliato)</option>
+                                                <option value="36 Mesi">36 Mesi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Smartphone / Dispositivo Desiderato</label>
+                                        <input type="text" name="modello" placeholder="es. iPhone 15 Pro 128GB o Samsung S24" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                    </div>
+
+                                    <button type="submit" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
+                                        <i class="fa-solid fa-paper-plane"></i> Invia Richiesta Preventivo
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- GRIGLIA PROMO NOLEGGIO -->
+                    <div class="pt-4">
+                        <h3 class="text-xl font-bold text-white mb-4">Offerte Noleggio in Evidenza</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-noleggio-offers"></div>
+                    </div>
+                </div>
+
+                <div id="device-selected-view" class="hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-6">
+                        <div class="flex items-center gap-3">
+                            <div id="cat-view-icon" class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div>
+                                <h2 id="cat-view-title" class="text-2xl sm:text-3xl font-black text-white">Categoria Selezionata</h2>
+                                <p id="cat-view-subtitle" class="text-xs text-slate-400">Elenco completo delle promozioni disponibili</p>
+                            </div>
+                        </div>
+                        <button onclick="resetDeviceView()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold transition flex items-center gap-2 border border-slate-700 w-fit">
+                            <i class="fa-solid fa-arrow-left"></i> Torna alle Categorie
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-selected-device"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VOLANTINO SECTION -->
+        <section id="sec-volantino" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xs uppercase">Edizione Digitale</span>
+                    <h2 class="text-3xl font-black text-white mt-2">Volantino Promozionale Del Mese</h2>
+                    <p class="text-slate-400 text-sm mt-2">Sfoglia direttamente online il catalogo completo di tutte le promo attive per questo mese in negozio.</p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 lg:p-8 max-w-4xl mx-auto border border-purple-500/30">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-slate-700/60 pb-6 mb-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white" id="flyer-title">Volantino Offerte Mese</h4>
+                                <p class="text-xs text-slate-400">Valido fino ad esaurimento scorte</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button onclick="openPdfViewer(currentData.volantinoUrl, 'Volantino Promozionale')" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold transition flex items-center gap-2 shadow-lg shadow-purple-600/30">
+                                <i class="fa-solid fa-expand"></i> Schermo Intero
+                            </button>
+                            <a id="flyer-download-btn" href="#" download class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-bold border border-slate-700 transition flex items-center gap-2">
+                                <i class="fa-solid fa-download"></i> Scarica Documento
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-[600px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 relative">
+                        <iframe id="flyer-iframe" src="" class="w-full h-full border-none"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 mt-20 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <img id="footer-logo-img" src="logo.png" alt="NewTecStore Logo Footer" class="h-10 w-auto object-contain" onerror="this.onerror=null; this.src='new tec.png';">
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Il tuo punto di riferimento sul territorio per la telefonia mobile e fissa, fibra ottica ed efficientamento energetico luce e gas.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://unit.link/newtecstore" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:underline">
+                            <i class="fa-solid fa-link"></i> unit.link/newtecstore
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider"><i class="fa-regular fa-clock text-cyan-400 mr-2"></i> Orari di Apertura</h4>
+                    <ul class="text-xs text-slate-400 space-y-2">
+                        <li class="flex justify-between border-b border-slate-800/60 pb-1"><span>Lunedì - Venerdì:</span> <span class="text-slate-200 font-medium">09:30 - 13:00 | 16:00 - 20:00</span></li>
+                        <li class="flex justify-between border-b border-slate-800/60 pb-1"><span>Sabato:</span> <span class="text-slate-200 font-medium">09:30 - 13:00 | 16:30 - 20:00</span></li>
+                        <li class="flex justify-between text-rose-400"><span>Domenica:</span> <span>Chiuso</span></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider"><i class="fa-solid fa-location-dot text-cyan-400 mr-2"></i> Dove Siamo</h4>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-house-chimney text-slate-500 mr-1.5"></i> Via Benvenuto Cellini, 20 - Portici (NA)</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-id-card text-slate-500 mr-1.5"></i> P.IVA: <span class="text-slate-300 font-medium">03608551218</span></p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-envelope text-slate-500 mr-1.5"></i> info@newtecstore.it</p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider"><i class="fa-solid fa-share-nodes text-cyan-400 mr-2"></i> Segui le Novità</h4>
+                    <div class="flex gap-2">
+                        <a href="https://unit.link/newtecstore" target="_blank" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-500 transition"><i class="fa-solid fa-link"></i></a>
+                        <a href="https://wa.me/393330000000" target="_blank" class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500 transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; 2026 NewTecStore. Tutti i diritti riservati.</p>
+                <div class="flex items-center gap-4">
+                    <button onclick="openPrivacyModal()" class="text-slate-400 hover:text-cyan-400 transition underline underline-offset-4">
+                        <i class="fa-solid fa-shield-halved mr-1 text-cyan-400"></i> Privacy Policy & GDPR
+                    </button>
+                    <span>|</span>
+                    <p>Ultimo aggiornamento catalogo: <span id="dataUltimoAggiornamento" class="text-emerald-400 font-medium">Nessun aggiornamento recente</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALE PRIVACY POLICY -->
+    <div id="privacy-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-700 w-full max-w-3xl rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6 my-8 text-slate-300 text-xs sm:text-sm leading-relaxed">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-white">Informativa sulla Privacy & Cookie Policy</h3>
+                        <p class="text-xs text-slate-400">GDPR Regolamento UE 2016/679 - NewTecStore</p>
+                    </div>
+                </div>
+                <button onclick="closePrivacyModal()" class="text-slate-400 hover:text-white text-xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+                <p>La presente informativa descrive le modalità di gestione del sito web di <strong>NewTecStore</strong> in riferimento al trattamento dei dati personali degli utenti che consultano il portale o utilizzano i nostri servizi di contatto e consulenza.</p>
+                
+                <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">1. Titolare del Trattamento</h4>
+                <p>Il titolare del trattamento dei dati è <strong>NewTecStore</strong> (New Tec di Cantore Giovanni), con sede in Via Benvenuto Cellini, 20 - Portici (NA). P.IVA: 03608551218. Per qualsiasi richiesta o informazione relativa alla privacy, è possibile contattarci all'indirizzo email: <a href="mailto:info@newtecstore.it" class="text-cyan-400 hover:underline">info@newtecstore.it</a>.</p>
+
+                <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">2. Dati Raccolti e Finalità</h4>
+                <p>Il nostro sito ha natura prevalentemente informativa e di vetrina promozionale. I dati personali inviati volontariamente dagli utenti (es. tramite form di richiesta preventivo o chat WhatsApp per noleggio o analisi bollette):</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Riguardano unicamente nome, cognome, contatto telefonico e documenti/bollette eventualmente allegati.</li>
+                    <li>Vengono utilizzati <strong>esclusivamente</strong> per elaborare il preventivo richiesto o ricontattare il cliente per la consulenza.</li>
+                    <li>Non vengono ceduti a terzi né utilizzati per invio di spam promozionale non richiesto.</li>
+                </ul>
+
+                <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">3. Conservazione dei Dati</h4>
+                <p>I dati vengono conservati per il tempo strettamente necessario a completare la richiesta del cliente o per soddisfare gli obblighi di legge amministrativi o fiscali previsti.</p>
+
+                <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">4. Cookie e Memoria Locale</h4>
+                <p>Il sito impiega unicamente cookie tecnici e memoria locale del browser (<em>localStorage</em>) indispensabili per il corretto funzionamento delle schermate e del pannello di aggiornamento offerte. Non vengono utilizzati cookie di profilazione o tracciamento pubblicitario.</p>
+
+                <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">5. Diritti dell'Utente</h4>
+                <p>Gli utenti hanno il diritto in qualsiasi momento di accedere ai propri personali, chiederne la rettifica, la cancellazione o la limitazione del trattamento scrivendo all'indirizzo email del Titolare.</p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex justify-end">
+                <button onclick="closePrivacyModal()" class="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
+                    Ho Capito / Chiudi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE ANTEPRIMA DOCUMENTO/ALLEGATO -->
+    <div id="pdf-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-2 sm:p-4">
+        <div class="bg-slate-900 border border-slate-700 w-full max-w-5xl h-[90vh] rounded-2xl flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 bg-slate-800 border-b border-slate-700 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-white text-base" id="modal-pdf-title">Prospetto / Allegato Offerta</h3>
+                        <p class="text-xs text-slate-400">Scheda Informativa Ufficiale</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a id="modal-pdf-download" href="#" target="_blank" class="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-bold hover:bg-cyan-400 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Apri Esterno
+                    </a>
+                    <button onclick="closePdfModal()" class="w-8 h-8 rounded-lg bg-slate-700 text-slate-300 hover:bg-rose-500 hover:text-white transition flex items-center justify-center">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex-grow bg-slate-950 relative flex items-center justify-center overflow-auto p-2">
+                <iframe id="modal-pdf-iframe" src="" class="w-full h-full border-none hidden"></iframe>
+                <img id="modal-img-preview" src="" alt="Anteprima Offerta" class="max-w-full max-h-full object-contain rounded-lg hidden shadow-2xl">
+                <video id="modal-video-preview" controls autoplay muted loop playsinline class="max-w-full max-h-full rounded-lg hidden shadow-2xl">
+                    <source id="modal-video-source" src="" type="video/mp4">
+                    Il tuo browser non supporta la riproduzione dei video.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE ADMIN / GESTORE PROTETTA -->
+    <div id="admin-modal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-700 w-full max-w-4xl rounded-2xl p-6 shadow-2xl space-y-8 my-8">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-white" id="admin-modal-title">Pannello Riservato Gestore (NewTecStore)</h3>
+                        <p class="text-xs text-slate-400">Aggiungi, modifica, elimina o esporta le offerte in archivio</p>
+                    </div>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-xl p-2">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- SEZIONE BACKUP & SINCRONIZZAZIONE (ESPORTA / IMPORTA) -->
+            <div class="bg-slate-950 border border-cyan-500/30 p-4 rounded-xl space-y-2">
+                <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-box-archive"></i> Gestione Backup & Sincronizzazione Sito
+                </h4>
+                <p class="text-xs text-slate-400">Esporta il file di backup JSON dal PC e importalo sul sito online per aggiornare istantaneamente tutte le offerte per i clienti.</p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <button onclick="esportaDatiOfferte()" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i> Esporta Offerte (JSON)
+                    </button>
+                    <label class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 font-bold text-xs transition flex items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-upload"></i> Importa Offerte
+                        <input type="file" id="fileImportOfferte" accept=".json" onchange="importaDatiOfferte(event)" class="hidden">
+                    </label>
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-cyan-400"></i> Gestione Offerte Esistenti
+                </h4>
+                <p class="text-xs text-slate-400">Usa "Modifica" per caricare i dati nel modulo sotto e aggiornarli, oppure "Elimina" per rimuovere l'offerta.</p>
+                
+                <div class="bg-slate-950 border border-slate-800 rounded-xl max-h-56 overflow-y-auto p-3 space-y-2" id="admin-offers-list"></div>
+            </div>
+
+            <hr class="border-slate-800">
+
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2" id="form-section-title">
+                    <i class="fa-solid fa-plus text-cyan-400"></i> Inserisci Nuova Promozione
+                </h4>
+                <form id="offer-form" onsubmit="saveOffer(event)" class="space-y-4">
+                    <input type="hidden" id="form-edit-id" value="">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Categoria Sezione</label>
+                            <select id="form-category" class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                                <option value="telefonia">📱 Telefonia & Fibra</option>
+                                <option value="energia">💡 Luce e Gas</option>
+                                <option value="rateizzi">📄 Smartphone a Rate (Gestore)</option>
+                                <option value="noleggio">🔄 Noleggio Operativo Smartphone</option>
+                                <option value="contanti">💵 Senza Vincolo / Cash</option>
+                                <option value="accessori">🎧 Accessori in Store</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Nome Brand / Gestore</label>
+                            <input type="text" id="form-brand" placeholder="es. Apple, Samsung, Pulsee" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Titolo Prodotto / Offerta</label>
+                            <input type="text" id="form-title" placeholder="es. Nuova sim o MNP" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Prezzo / Canone</label>
+                            <input type="text" id="form-price" placeholder="es. a partire da € 4,99" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-1">Dettagli / Caratteristiche Chiave</label>
+                        <input type="text" id="form-details" placeholder="es. Prezzo fisso bloccato" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Badge di Stato</label>
+                            <select id="form-badge" class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                                <option value="In Vigore">🟢 In Vigore</option>
+                                <option value="Novità Mese">🔥 Novità Mese</option>
+                                <option value="Zero Anticipo">⭐ Zero Anticipo</option>
+                                <option value="Promo Speciale">⭐ Promo Speciale</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Data Scadenza (Opzionale)</label>
+                            <input type="date" id="form-expiry" class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Percorso Allegato (PDF, JPG, MP4)</label>
+                            <input type="text" id="form-pdf" placeholder="es. pdf/pulsee.pdf" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex justify-end gap-3">
+                        <button type="button" onclick="resetForm()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">Annulla / Reset</button>
+                        <button type="submit" id="form-submit-btn" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
+                            <i class="fa-solid fa-plus mr-1"></i> Aggiungi Nuova Offerta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGICA JAVASCRIPT -->
+    <script>
+        const ADMIN_PIN = "1976"; // Password riservata gestore
+
+        let defaultData = {
+            volantinoUrl: "pdf/volantino.pdf",
+            telefonia: [
+                { id: 1, brand: "WindTre", title: "Super Fibra & Mobile", price: "€22,99 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra fino a 2.5 Gbps + Giga Illimitati per i già clienti.", pdfUrl: "pdf/wind3_fibra.pdf", expiryDate: "" },
+                { id: 2, brand: "Very", title: "Very 150 Giga", price: "€5,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "150GB su rete WindTre, minuti e SMS illimitati.", pdfUrl: "pdf/very.pdf", expiryDate: "" },
+                { id: 3, brand: "Iliad", title: "Giga 180 in 5G", price: "€9,99 / mese", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "180 Giga in 5G, Minuti e SMS illimitati senza sorprese.", pdfUrl: "pdf/iliad.pdf", expiryDate: "" },
+                { id: 4, brand: "TIM", title: "5G Power Unlimited", price: "€14,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Giga Illimitati in 5G con priorità di rete.", pdfUrl: "pdf/tim_mobile.pdf", expiryDate: "" },
+                { id: 5, brand: "Sky", title: "Sky Wifi Ultra", price: "€24,90 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra Ultraveloce senza vincoli con modem Wifi Sphera.", pdfUrl: "pdf/sky_wifi.pdf", expiryDate: "" },
+                { id: 6, brand: "Kena", title: "Kena 200 Giga Promo", price: "€6,99 / mese", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "200 Giga in 4G su rete TIM, minuti illimitati.", pdfUrl: "pdf/kena.pdf", expiryDate: "" },
+                { id: 7, brand: "Ho Mobile", title: "ho. 180 Giga 5G", price: "€7,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "180 Giga in 5G su rete Vodafone, riparti quando vuoi.", pdfUrl: "pdf/homobile.pdf", expiryDate: "" }
+            ],
+            energia: [
+                { id: 101, brand: "Pulsee", title: "FIX 144 -36 MESI", price: "0,17195€/kWh / 0,884€/smc", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Prezzo fisso bloccato x 36 mesi e energimetro incluso", pdfUrl: "pdf/pulsee.pdf", expiryDate: "" },
+                { id: 102, brand: "Enel Energia", title: "Formidabile Luce Flex", price: "Prezzo di Costo + Fee", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Energia 100% da fonti rinnovabili.", pdfUrl: "pdf/enel_luce.pdf", expiryDate: "" },
+                { id: 103, brand: "Plenitude", title: "Trend Casa Luce & Gas", price: "Tariffa Indicizzata PUN", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "Sconto fedeltà in bolletta.", pdfUrl: "pdf/plenitude.pdf", expiryDate: "" }
+            ],
+            rateizzi: [
+                { id: 201, brand: "Apple", title: "iPhone 15 128GB (Rate)", price: "€29,90 / mese", badge: "Zero Anticipo", badgeColor: "bg-blue-500/20 text-blue-400 border-blue-500/30", details: "Abbinabile a offerta TIM o WindTre. Kasko inclusa.", pdfUrl: "pdf/rate_iphone.pdf", expiryDate: "" },
+                { id: 202, brand: "Samsung", title: "Galaxy S24 5G (Rate)", price: "€24,90 / mese", badge: "Promo Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Rateizzazione in bolletta con operatore telefonico.", pdfUrl: "pdf/rate_samsung.pdf", expiryDate: "" }
+            ],
+            noleggio: [
+                { id: 501, brand: "Apple", title: "iPhone 15 Pro 128GB (Noleggio)", price: "€39,00 / mese", badge: "Novità Mese", badgeColor: "bg-amber-500/20 text-amber-400 border-amber-500/30", details: "Zero anticipo, Assicurazione Kasko/Furto inclusa. Deducibile al 100% per P.IVA.", pdfUrl: "pdf/noleggio_iphone.pdf", expiryDate: "" }
+            ],
+            contanti: [
+                { id: 301, brand: "Xiaomi", title: "Redmi Note 13 Pro", price: "€249,00 cash", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Disponibile subito in negozio senza vincoli né abbonamenti.", pdfUrl: "pdf/xiaomi_cash.pdf", expiryDate: "" }
+            ],
+            accessori: [
+                { id: 401, brand: "JBL", title: "Cuffie Tune Flex TWS", price: "€79,99", badge: "Novità Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Cancellazione attiva del rumore, custodia di ricarica.", pdfUrl: "pdf/accessori.pdf", expiryDate: "" }
+            ]
+        };
+
+        let currentData = JSON.parse(localStorage.getItem('newtec_offerte_data')) || defaultData;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAllGrids();
+            updateVolantinoView();
+            caricaDataAggiornamento();
+        });
+
+        function saveData() {
+            localStorage.setItem('newtec_offerte_data', JSON.stringify(currentData));
+            aggiornaDataModifica();
+            renderAllGrids();
+            renderAdminOffersList();
+        }
+
+        function navigateTo(sectionId) {
+            document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
+            const target = document.getElementById('sec-' + sectionId);
+            if(target) target.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                btn.classList.remove('text-cyan-400');
+                btn.classList.add('text-slate-300');
+            });
+            const activeNav = document.getElementById('nav-' + sectionId);
+            if(activeNav) {
+                activeNav.classList.add('text-cyan-400');
+                activeNav.classList.remove('text-slate-300');
+            }
+
+            if(sectionId === 'smartphone') resetDeviceView();
+            if(sectionId === 'telefonia') resetTelefoniaBrandView();
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function getBadgeInfo(item) {
+            if (!item.expiryDate) {
+                return {
+                    text: item.badge || 'In Vigore',
+                    color: item.badgeColor || 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
+                };
+            }
+
+            const today = new Date();
+            today.setHours(0,0,0,0);
+            const expDate = new Date(item.expiryDate);
+            expDate.setHours(0,0,0,0);
+
+            const diffTime = expDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays < 0) {
+                return {
+                    text: '⛔ SCADUTA',
+                    color: 'bg-rose-600 text-white border-rose-500 animate-pulse font-bold'
+                };
+            } else if (diffDays <= 3) {
+                const daysText = diffDays === 0 ? 'Scade Oggi!' : `Ultimi ${diffDays} giorni`;
+                return {
+                    text: `⚠️ ${daysText}`,
+                    color: 'bg-amber-500/30 text-amber-300 border-amber-500/50 animate-bounce font-bold'
+                };
+            } else {
+                const formattedDate = expDate.toLocaleDateString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric' });
+                return {
+                    text: `📅 Scade il ${formattedDate}`,
+                    color: item.badgeColor || 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30'
+                };
+            }
+        }
+
+        function getBrandBadgeHtml(brandName, isLargeCard = false) {
+            const b = brandName.trim().toLowerCase();
+            let fileName = '';
+            let fallbackBg = 'bg-cyan-600';
+            let fallbackText = brandName.trim().substring(0, 3).toUpperCase();
+
+            if (b.includes('very')) { fileName = 'very.png'; fallbackBg = 'bg-[#11a00a]'; }
+            else if (b.includes('wind') || b.includes('wind3') || b.includes('windtre') || b.includes('w3')) { fileName = 'windtre.png'; fallbackBg = 'bg-orange-600'; }
+            else if (b.includes('iliad')) { fileName = 'iliad.png'; fallbackBg = 'bg-[#cc0000]'; }
+            else if (b.includes('tim')) { fileName = 'tim.png'; fallbackBg = 'bg-[#002B72]'; }
+            else if (b.includes('sky')) { fileName = 'sky.png'; fallbackBg = 'bg-blue-600'; }
+            else if (b.includes('kena')) { fileName = 'kena.png'; fallbackBg = 'bg-yellow-400 text-black'; }
+            else if (b.includes('ho') || b.includes('homobile')) { fileName = 'homobile.png'; fallbackBg = 'bg-[#612d8a]'; }
+            else if (b.includes('vodafone')) { fileName = 'vodafone.png'; fallbackBg = 'bg-red-600'; }
+            else if (b.includes('fastweb')) { fileName = 'fastweb.png'; fallbackBg = 'bg-yellow-500 text-black'; }
+            // LOGHI LUCE & GAS
+            else if (b.includes('pulsee')) { fileName = 'pulsee.png'; fallbackBg = 'bg-[#00A3E0]'; }
+            else if (b.includes('enel')) { fileName = 'enel.png'; fallbackBg = 'bg-[#00529B]'; }
+            else if (b.includes('plenitude')) { fileName = 'plenitude.png'; fallbackBg = 'bg-[#00875A]'; }
+            else if (b.includes('edison')) { fileName = 'edison.png'; fallbackBg = 'bg-emerald-600'; }
+            else if (b.includes('acea')) { fileName = 'acea.png'; fallbackBg = 'bg-cyan-600'; }
+            else if (b.includes('a2a')) { fileName = 'a2a.png'; fallbackBg = 'bg-blue-500'; }
+            else if (b.includes('sorgenia')) { fileName = 'sorgenia.png'; fallbackBg = 'bg-emerald-500'; }
+            else if (b.includes('hera')) { fileName = 'hera.png'; fallbackBg = 'bg-indigo-600'; }
+            // DEVICES & ACCESSORI
+            else if (b.includes('apple')) { fileName = 'apple.png'; fallbackBg = 'bg-slate-800'; }
+            else if (b.includes('samsung')) { fileName = 'samsung.png'; fallbackBg = 'bg-[#1428A0]'; }
+            else if (b.includes('xiaomi')) { fileName = 'xiaomi.png'; fallbackBg = 'bg-orange-500'; }
+
+            const sizeClass = isLargeCard ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-2xl p-2.5' : 'w-12 h-12 rounded-xl p-1.5';
+            const fallbackSizeClass = isLargeCard ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-2xl text-lg font-black' : 'w-12 h-12 rounded-xl text-xs font-black';
+
+            const isPulsee = b.includes('pulsee');
+            const bgStyle = isPulsee ? 'bg-slate-100 border border-slate-300' : 'bg-slate-900 border border-slate-700/80';
+            const imgStyle = isPulsee ? 'w-full h-full object-contain filter contrast-125' : 'w-full h-full object-contain';
+
+            if(fileName) {
+                return `<div class="${sizeClass} ${bgStyle} flex items-center justify-center shadow-xl overflow-hidden shrink-0 transition transform hover:scale-105">
+                            <img src="loghi/${fileName}" alt="${brandName}" class="${imgStyle}" onerror="this.parentElement.outerHTML='<div class=\\'${fallbackSizeClass} ${fallbackBg} text-white flex items-center justify-center uppercase shadow-xl border border-slate-600/40 shrink-0\\'>${fallbackText}</div>';">
+                        </div>`;
+            } else {
+                return `<div class="${fallbackSizeClass} ${fallbackBg} text-white flex items-center justify-center uppercase shadow-xl border border-cyan-400/40 shrink-0">${fallbackText}</div>`;
+            }
+        }
+
+        function renderTelefoniaBrandCards() {
+            const grid = document.getElementById('telefonia-brands-grid');
+            if(!grid) return;
+
+            const brandMap = new Map();
+            currentData.telefonia.forEach(i => {
+                const originalName = i.brand.trim();
+                const cleanKey = originalName.toLowerCase();
+                if (!brandMap.has(cleanKey)) brandMap.set(cleanKey, originalName);
+            });
+
+            const uniqueBrands = Array.from(brandMap.values());
+            if(uniqueBrands.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm">Nessun gestore o offerta disponibile al momento.</div>`;
+                return;
+            }
+
+            grid.innerHTML = uniqueBrands.map(brand => `
+                <div onclick="selectTelefoniaBrand('${brand.replace(/'/g, "\\'")}')" class="glass-card rounded-3xl p-6 sm:p-8 hover:border-cyan-500 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer group text-center space-y-4 glow-effect flex flex-col items-center justify-center">
+                    ${getBrandBadgeHtml(brand, true)}
+                    <span class="inline-flex items-center text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition pt-1">
+                        Sfoglia Offerte <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                    </span>
+                </div>
+            `).join('');
+        }
+
+        function renderQuickFilters(activeBrand = '') {
+            const container = document.getElementById('telefonia-quick-filters');
+            if(!container) return;
+
+            const brandMap = new Map();
+            currentData.telefonia.forEach(i => {
+                const originalName = i.brand.trim();
+                const cleanKey = originalName.toLowerCase();
+                if (!brandMap.has(cleanKey)) brandMap.set(cleanKey, originalName);
+            });
+            const uniqueBrands = Array.from(brandMap.values());
+
+            let html = `<button onclick="selectTelefoniaBrand('')" class="px-4 py-2 rounded-xl text-xs font-bold transition shrink-0 ${activeBrand === '' ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20' : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700'}">Tutti i Gestori</button>`;
+
+            uniqueBrands.forEach(brand => {
+                const isActive = activeBrand.toLowerCase() === brand.toLowerCase();
+                html += `<button onclick="selectTelefoniaBrand('${brand.replace(/'/g, "\\'")}')" class="px-4 py-2 rounded-xl text-xs font-bold transition shrink-0 ${isActive ? 'bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/20' : 'bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700'}">${brand}</button>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function selectTelefoniaBrand(brandName) {
+            document.getElementById('telefonia-brands-landing').classList.add('hidden');
+            const viewDiv = document.getElementById('telefonia-selected-brand-view');
+            viewDiv.classList.remove('hidden');
+
+            renderQuickFilters(brandName);
+
+            if(brandName === '') {
+                document.getElementById('brand-view-title').innerText = "Tutte le Offerte Telefonia";
+                document.getElementById('brand-view-logo').innerHTML = `<div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-xl"><i class="fa-solid fa-tower-cell"></i></div>`;
+                renderGrid('telefonia', currentData.telefonia, 'grid-telefonia-brand');
+            } else {
+                document.getElementById('brand-view-title').innerText = brandName;
+                document.getElementById('brand-view-logo').innerHTML = getBrandBadgeHtml(brandName, false);
+
+                const searchKey = brandName.trim().toLowerCase();
+                const filteredOffers = currentData.telefonia.filter(i => i.brand.trim().toLowerCase() === searchKey);
+                renderGrid('telefonia', filteredOffers, 'grid-telefonia-brand');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function resetTelefoniaBrandView() {
+            document.getElementById('telefonia-brands-landing').classList.remove('hidden');
+            document.getElementById('telefonia-selected-brand-view').classList.add('hidden');
+            renderTelefoniaBrandCards();
+        }
+
+        function selectDeviceCategory(catKey) {
+            document.getElementById('device-landing-cards').classList.add('hidden');
+            const noleggioView = document.getElementById('device-noleggio-view');
+            const selectedView = document.getElementById('device-selected-view');
+
+            noleggioView.classList.add('hidden');
+            selectedView.classList.add('hidden');
+
+            if(catKey === 'noleggio') {
+                noleggioView.classList.remove('hidden');
+                renderGrid('noleggio', currentData.noleggio || [], 'grid-noleggio-offers');
+            } else {
+                selectedView.classList.remove('hidden');
+                const titleEl = document.getElementById('cat-view-title');
+                const subTitleEl = document.getElementById('cat-view-subtitle');
+                const iconEl = document.getElementById('cat-view-icon');
+
+                if(catKey === 'rateizzi') {
+                    titleEl.innerText = "Smartphone a Rate (Gestore)";
+                    subTitleEl.innerText = "Promozioni abbinate con rateizzazione in bolletta per tutti i gestori";
+                    iconEl.innerHTML = `<i class="fa-solid fa-file-invoice-dollar"></i>`;
+                    renderGrid('rateizzi', currentData.rateizzi, 'grid-selected-device');
+                } else if(catKey === 'contanti') {
+                    titleEl.innerText = "Senza Vincoli / Acquisto Cash";
+                    subTitleEl.innerText = "Dispositivi pronti all'uso acquistabili in contanti senza vincoli contrattuali";
+                    iconEl.innerHTML = `<i class="fa-solid fa-wallet"></i>`;
+                    renderGrid('contanti', currentData.contanti, 'grid-selected-device');
+                } else if(catKey === 'accessori') {
+                    titleEl.innerText = "Accessori in Store";
+                    subTitleEl.innerText = "Cover, vetri protettivi, audio e alimentatori disponibili subito in negozio";
+                    iconEl.innerHTML = `<i class="fa-solid fa-headphones"></i>`;
+                    renderGrid('accessori', currentData.accessori, 'grid-selected-device');
+                }
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function resetDeviceView() {
+            document.getElementById('device-landing-cards').classList.remove('hidden');
+            document.getElementById('device-selected-view').classList.add('hidden');
+            document.getElementById('device-noleggio-view').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function renderAllGrids() {
+            renderTelefoniaBrandCards();
+            renderGrid('energia', currentData.energia, 'grid-energia');
+        }
+
+        function renderGrid(category, items, gridId) {
+            const container = document.getElementById(gridId);
+            if(!container) return;
+            if(!items || items.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm font-medium">Nessuna offerta o prodotto trovato in questa sezione.</div>`;
+                return;
+            }
+            container.innerHTML = items.map(item => {
+                const badgeInfo = getBadgeInfo(item);
+                
+                const cleanUrl = (item.pdfUrl || '').trim().toLowerCase();
+                const isImage = cleanUrl.endsWith('.jpg') || cleanUrl.endsWith('.jpeg') || cleanUrl.endsWith('.png') || cleanUrl.endsWith('.webp') || cleanUrl.endsWith('.gif') || cleanUrl.startsWith('data:image/');
+                const isVideo = cleanUrl.endsWith('.mp4') || cleanUrl.endsWith('.webm') || cleanUrl.endsWith('.ogg');
+
+                let previewHtml = '';
+                if (isImage) {
+                    previewHtml = `
+                        <div onclick="openPdfViewer('${item.pdfUrl}', '${item.brand.replace(/'/g, "\\'")} - ${item.title.replace(/'/g, "\\'")}')" class="my-3 w-full h-44 bg-slate-950/80 rounded-xl overflow-hidden border border-slate-800/80 flex items-center justify-center p-2 relative group-hover:border-cyan-500/40 transition cursor-pointer">
+                            <img src="${item.pdfUrl}" alt="${item.title}" class="max-w-full max-h-full object-contain drop-shadow-lg transition transform group-hover:scale-105">
+                        </div>
+                    `;
+                } else if (isVideo) {
+                    previewHtml = `
+                        <div onclick="openPdfViewer('${item.pdfUrl}', '${item.brand.replace(/'/g, "\\'")} - ${item.title.replace(/'/g, "\\'")}')" class="my-3 w-full h-44 bg-slate-950/80 rounded-xl overflow-hidden border border-slate-800/80 flex items-center justify-center relative group-hover:border-cyan-500/40 transition cursor-pointer">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="${item.pdfUrl}" type="video/mp4">
+                            </video>
+                            <div class="absolute inset-0 bg-slate-950/30 flex items-center justify-center pointer-events-none">
+                                <div class="w-10 h-10 rounded-full bg-cyan-500/80 text-slate-950 flex items-center justify-center shadow-lg">
+                                    <i class="fa-solid fa-play ml-0.5 text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    previewHtml = `
+                        <div onclick="openPdfViewer('${item.pdfUrl}', '${item.brand.replace(/'/g, "\\'")} - ${item.title.replace(/'/g, "\\'")}')" class="my-3 w-full h-44 bg-gradient-to-br from-slate-900 to-slate-950 rounded-xl overflow-hidden border border-slate-800 flex flex-col items-center justify-center p-4 relative group-hover:border-cyan-500/40 transition shadow-inner cursor-pointer">
+                            <div class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 text-[10px] font-bold uppercase border border-rose-500/30">PDF Ufficiale</div>
+                            <div class="w-12 h-14 bg-slate-800/90 rounded-lg border border-slate-700/80 flex flex-col items-center justify-center shadow-lg mb-2.5 group-hover:scale-105 transition">
+                                <i class="fa-solid fa-file-pdf text-2xl text-rose-500"></i>
+                            </div>
+                            <span class="text-xs font-bold text-slate-200 truncate max-w-[90%] text-center">${item.title}</span>
+                            <span class="text-[10px] text-cyan-400 mt-1 font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-eye text-xs"></i> Clicca per visualizzare il prospetto
+                            </span>
+                        </div>
+                    `;
+                }
+
+                const whatsAppMsg = encodeURIComponent(`Ciao NewTecStore, vorrei informazioni / attivare l'offerta: ${item.brand} - ${item.title} (${item.price})`);
+
+                return `
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-slate-700 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-3">
+                                ${getBrandBadgeHtml(item.brand, false)}
+                                <div>
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">${item.brand}</span>
+                                    <h4 class="font-bold text-lg text-white leading-snug">${item.title}</h4>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold border ${badgeInfo.color}">
+                                ${badgeInfo.text}
+                            </span>
+                        </div>
+
+                        ${previewHtml}
+
+                        <div class="my-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                            <div class="text-xl font-extrabold text-cyan-400">${item.price}</div>
+                            <p class="text-xs text-slate-300 mt-2 leading-relaxed">${item.details}</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                        <button onclick="openPdfViewer('${item.pdfUrl}', '${item.brand.replace(/'/g, "\\'")} - ${item.title.replace(/'/g, "\\'")}')" class="flex-grow py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-invoice text-cyan-400"></i> Vedi Prospetto / Anteprima
+                        </button>
+                        <a href="https://wa.me/393330000000?text=${whatsAppMsg}" target="_blank" class="p-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white transition" title="Richiedi su WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function handleQuickSearch() {
+            const inputEl = document.getElementById('quick-search');
+            if(!inputEl) return;
+            
+            const query = inputEl.value.trim();
+            if(!query) return;
+
+            const q = query.toLowerCase();
+            
+            let allResults = [];
+            const categories = ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'];
+            
+            categories.forEach(cat => {
+                if(currentData[cat] && Array.isArray(currentData[cat])) {
+                    const matches = currentData[cat].filter(i => 
+                        (i.brand && i.brand.toLowerCase().includes(q)) || 
+                        (i.title && i.title.toLowerCase().includes(q)) || 
+                        (i.details && i.details.toLowerCase().includes(q))
+                    );
+                    allResults = allResults.concat(matches);
+                }
+            });
+            
+            document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('sec-search-results').classList.remove('hidden');
+            
+            document.getElementById('search-results-title').innerText = `Risultati Ricerca: "${query}" (${allResults.length} trovati)`;
+            
+            renderGrid('search', allResults, 'grid-search-results');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateVolantinoView() {
+            const iframe = document.getElementById('flyer-iframe');
+            if(iframe) iframe.src = currentData.volantinoUrl;
+        }
+
+        function openPdfViewer(url, title) {
+            document.getElementById('modal-pdf-title').innerText = title || 'Prospetto Offerta';
+            document.getElementById('modal-pdf-download').href = url;
+
+            const iframeEl = document.getElementById('modal-pdf-iframe');
+            const imgEl = document.getElementById('modal-img-preview');
+            const videoEl = document.getElementById('modal-video-preview');
+            const videoSrcEl = document.getElementById('modal-video-source');
+
+            const cleanUrl = url.trim().toLowerCase();
+            const isImage = cleanUrl.endsWith('.jpg') || cleanUrl.endsWith('.jpeg') || cleanUrl.endsWith('.png') || cleanUrl.endsWith('.webp') || cleanUrl.endsWith('.gif') || cleanUrl.startsWith('data:image/');
+            const isVideo = cleanUrl.endsWith('.mp4') || cleanUrl.endsWith('.webm') || cleanUrl.endsWith('.ogg');
+
+            iframeEl.classList.add('hidden');
+            imgEl.classList.add('hidden');
+            videoEl.classList.add('hidden');
+            videoEl.pause();
+
+            if (isImage) {
+                imgEl.src = url;
+                imgEl.classList.remove('hidden');
+            } else if (isVideo) {
+                videoSrcEl.src = url;
+                videoEl.load();
+                videoEl.classList.remove('hidden');
+            } else {
+                iframeEl.src = url;
+                iframeEl.classList.remove('hidden');
+            }
+
+            document.getElementById('pdf-modal').classList.remove('hidden');
+        }
+
+        function closePdfModal() {
+            document.getElementById('pdf-modal').classList.add('hidden');
+            document.getElementById('modal-pdf-iframe').src = '';
+            document.getElementById('modal-img-preview').src = '';
+            const videoEl = document.getElementById('modal-video-preview');
+            videoEl.pause();
+            document.getElementById('modal-video-source').src = '';
+        }
+
+        function openPrivacyModal() {
+            document.getElementById('privacy-modal').classList.remove('hidden');
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacy-modal').classList.add('hidden');
+        }
+
+        function checkAdminAccess() {
+            const userPin = prompt("Inserisci la password riservata al gestore per accedere all'area di modifica:");
+            if(userPin === null) return;
+            
+            if(userPin === ADMIN_PIN) {
+                renderAdminOffersList();
+                document.getElementById('admin-modal').classList.remove('hidden');
+            } else {
+                alert("Password errata! Accesso negato.");
+            }
+        }
+
+        function closeAdminModal() { document.getElementById('admin-modal').classList.add('hidden'); }
+
+        function renderAdminOffersList() {
+            const container = document.getElementById('admin-offers-list');
+            if(!container) return;
+
+            let allItemsHtml = '';
+            
+            const categories = [
+                { key: 'telefonia', name: '📱 Telefonia & Fibra' },
+                { key: 'energia', name: '💡 Luce & Gas' },
+                { key: 'rateizzi', name: '📄 Smartphone a Rate (Gestore)' },
+                { key: 'noleggio', name: '🔄 Noleggio Operativo Smartphone' },
+                { key: 'contanti', name: '💵 Senza Vincolo / Cash' },
+                { key: 'accessori', name: '🎧 Accessori in Store' }
+            ];
+
+            categories.forEach(cat => {
+                if(currentData[cat.key] && currentData[cat.key].length > 0) {
+                    allItemsHtml += `<div class="text-xs font-bold text-cyan-400 pt-2 pb-1 uppercase tracking-wider">${cat.name}</div>`;
+                    currentData[cat.key].forEach(item => {
+                        const badgeInfo = getBadgeInfo(item);
+                        allItemsHtml += `
+                            <div class="flex items-center justify-between bg-slate-900 p-2.5 rounded-lg border border-slate-800 text-xs gap-2">
+                                <div class="truncate">
+                                    <span class="font-bold text-white">${item.brand}</span> - ${item.title} <span class="text-slate-400">(${item.price})</span>
+                                    <span class="ml-2 text-[10px] px-2 py-0.5 rounded border ${badgeInfo.color}">${badgeInfo.text}</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 shrink-0">
+                                    <button onclick="editOffer('${cat.key}', ${item.id})" class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition font-bold flex items-center gap-1">
+                                        <i class="fa-solid fa-pen-to-square"></i> Modifica
+                                    </button>
+                                    <button onclick="deleteOffer('${cat.key}', ${item.id})" class="px-2.5 py-1 rounded bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition font-bold flex items-center gap-1">
+                                        <i class="fa-solid fa-trash-can"></i> Elimina
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+            });
+
+            container.innerHTML = allItemsHtml || `<p class="text-slate-500 text-center py-4">Nessuna offerta in archivio.</p>`;
+        }
+
+        function editOffer(category, id) {
+            let item = null;
+            let actualCategory = category;
+
+            if (currentData[category]) {
+                item = currentData[category].find(i => String(i.id) === String(id));
+            }
+            if (!item) {
+                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                    const found = currentData[cat] ? currentData[cat].find(i => String(i.id) === String(id)) : null;
+                    if (found) {
+                        item = found;
+                        actualCategory = cat;
+                    }
+                });
+            }
+
+            if(!item) return;
+
+            document.getElementById('form-edit-id').value = item.id;
+            document.getElementById('form-category').value = actualCategory;
+            document.getElementById('form-brand').value = item.brand;
+            document.getElementById('form-title').value = item.title;
+            document.getElementById('form-price').value = item.price;
+            document.getElementById('form-details').value = item.details;
+            document.getElementById('form-badge').value = item.badge || 'In Vigore';
+            document.getElementById('form-expiry').value = item.expiryDate || '';
+            document.getElementById('form-pdf').value = item.pdfUrl;
+
+            document.getElementById('form-section-title').innerHTML = `<i class="fa-solid fa-pen-to-square text-cyan-400"></i> Modifica Offerta in Corso`;
+            document.getElementById('form-submit-btn').innerHTML = `<i class="fa-solid fa-check mr-1"></i> Salva Modifiche`;
+            
+            document.getElementById('offer-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function deleteOffer(category, id) {
+            if(confirm('Sei sicuro di voler eliminare questa offerta?')) {
+                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                    if (currentData[cat]) {
+                        currentData[cat] = currentData[cat].filter(item => String(item.id) !== String(id));
+                    }
+                });
+                saveData();
+            }
+        }
+
+        function saveOffer(e) {
+            e.preventDefault();
+            const editId = document.getElementById('form-edit-id').value;
+            const category = document.getElementById('form-category').value;
+            
+            const offerData = {
+                brand: document.getElementById('form-brand').value.trim(),
+                title: document.getElementById('form-title').value.trim(),
+                price: document.getElementById('form-price').value.trim(),
+                badge: document.getElementById('form-badge').value,
+                badgeColor: 'bg-cyan-500/20 text-cyan-400 border-cyan-500/30',
+                details: document.getElementById('form-details').value.trim(),
+                expiryDate: document.getElementById('form-expiry').value,
+                pdfUrl: document.getElementById('form-pdf').value.trim()
+            };
+
+            if(editId) {
+                let foundCategory = null;
+                let foundIndex = -1;
+
+                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                    if (currentData[cat]) {
+                        const idx = currentData[cat].findIndex(i => String(i.id) === String(editId));
+                        if(idx !== -1) {
+                            foundCategory = cat;
+                            foundIndex = idx;
+                        }
+                    }
+                });
+
+                if(foundCategory !== null) {
+                    offerData.id = isNaN(Number(editId)) ? editId : Number(editId);
+                    if(foundCategory === category) {
+                        currentData[category][foundIndex] = offerData;
+                    } else {
+                        currentData[foundCategory].splice(foundIndex, 1);
+                        if(!currentData[category]) currentData[category] = [];
+                        currentData[category].unshift(offerData);
+                    }
+                    alert('Offerta modificata e salvata con successo!');
+                } else {
+                    offerData.id = Date.now();
+                    if(!currentData[category]) currentData[category] = [];
+                    currentData[category].unshift(offerData);
+                    alert('Offerta salvata con successo!');
+                }
+            } else {
+                offerData.id = Date.now();
+                if(!currentData[category]) currentData[category] = [];
+                currentData[category].unshift(offerData);
+                alert('Nuova offerta aggiunta con successo!');
+            }
+
+            saveData();
+            resetForm();
+        }
+
+        function resetForm() {
+            document.getElementById('offer-form').reset();
+            document.getElementById('form-edit-id').value = '';
+            document.getElementById('form-section-title').innerHTML = `<i class="fa-solid fa-plus text-cyan-400"></i> Inserisci Nuova Promozione`;
+            document.getElementById('form-submit-btn').innerHTML = `<i class="fa-solid fa-plus mr-1"></i> Aggiungi Nuova Offerta`;
+        }
+
+        /* FUNZIONI DI BACKUP (ESPORTA / IMPORTA) E DATA AGGIORNAMENTO */
+        function esportaDatiOfferte() {
+            const datiSalvati = JSON.stringify(currentData, null, 2);
+            const blob = new Blob([datiSalvati], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'offerte_newtecstore_backup.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function importaDatiOfferte(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const contenuto = e.target.result;
+                    const parsed = JSON.parse(contenuto);
+                    
+                    if(parsed && parsed.telefonia) {
+                        currentData = parsed;
+                        saveData();
+                        alert('Offerte e dati importati con successo!');
+                        location.reload();
+                    } else {
+                        alert('Errore: Il file JSON non contiene una struttura di dati valida.');
+                    }
+                } catch (error) {
+                    alert('Errore di lettura: File JSON non valido.');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function aggiornaDataModifica() {
+            const oraCorrente = new Date();
+            const opzioni = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const dataFormattata = oraCorrente.toLocaleDateString('it-IT', opzioni);
+
+            localStorage.setItem('newtecstore_last_update', dataFormattata);
+            
+            const elementoData = document.getElementById('dataUltimoAggiornamento');
+            if (elementoData) {
+                elementoData.textContent = dataFormattata;
+            }
+        }
+
+        function caricaDataAggiornamento() {
+            const dataSalvata = localStorage.getItem('newtecstore_last_update');
+            const elementoData = document.getElementById('dataUltimoAggiornamento');
+            if (elementoData && dataSalvata) {
+                elementoData.textContent = dataSalvata;
+            }
+        }
+    </script>
+</body>
+</html>
