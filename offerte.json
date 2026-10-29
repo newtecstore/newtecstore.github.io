@@ -211,20 +211,21 @@
       "details": "tutte le offerte KENA",
       "expiryDate": "",
       "pdfUrl": "pdf/kena/kena_video.mp4"
-    },
-    {
-      "id": 7,
-      "brand": "Ho Mobile",
-      "title": "ho. 180 Giga 5G",
-      "price": "€7,99 / mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-      "details": "180 Giga in 5G su rete Vodafone, riparti quando vuoi.",
-      "pdfUrl": "pdf/homobile.pdf",
-      "expiryDate": ""
     }
   ],
   "energia": [
+    {
+      "id": 1793285880346,
+      "active": true,
+      "brand": "edison",
+      "title": "Easy Fix Luce/Gas",
+      "price": "0,1909 €/kWh / 0,92 €/smc",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Prezzo fisso bloccato PVC 12€",
+      "expiryDate": "",
+      "pdfUrl": "pdf/lucegas/edison_fix.pdf"
+    },
     {
       "id": 1793284403265,
       "active": true,
@@ -239,14 +240,15 @@
     },
     {
       "id": 101,
+      "active": true,
       "brand": "Pulsee",
       "title": "FIX 144 -36 MESI",
       "price": "0,17195€/kWh / 0,884€/smc",
       "badge": "In Vigore",
-      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "Prezzo fisso bloccato x 36 mesi e energimetro incluso",
-      "pdfUrl": "pdf/pulsee.pdf",
-      "expiryDate": ""
+      "expiryDate": "",
+      "pdfUrl": "pdf/lucegas/pulsee_fix36.pdf"
     },
     {
       "id": 102,
