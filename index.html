@@ -760,7 +760,7 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-lg text-white" id="admin-modal-title">Pannello Riservato Gestore (NewTecStore)</h3>
-                        <p class="text-xs text-slate-400">Gestisci e scarica il file JSON aggiornato per GitHub</p>
+                        <p class="text-xs text-slate-400">Gestisci, riordina e scarica il file JSON aggiornato per GitHub</p>
                     </div>
                 </div>
                 <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-xl p-2">
@@ -773,7 +773,7 @@
                 <h4 class="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
                     <i class="fa-solid fa-cloud-arrow-up"></i> Pubblicazione Rapida su GitHub
                 </h4>
-                <p class="text-xs text-slate-400">Dopo aver aggiunto o modificato le offerte, esporta il file JSON, rinominalo in <strong>offerte.json</strong> e caricalo sulla repository GitHub.</p>
+                <p class="text-xs text-slate-400">Dopo aver modificato o riordinato le offerte, esporta il file JSON, rinominalo in <strong>offerte.json</strong> e caricalo sulla repository GitHub.</p>
                 <div class="pt-2">
                     <button onclick="esportaDatiOfferte()" class="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-slate-950 text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-cyan-600/20">
                         <i class="fa-solid fa-download"></i> Scarica "offerte.json" Aggiornato
@@ -783,11 +783,11 @@
 
             <div class="space-y-3">
                 <h4 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                    <i class="fa-solid fa-list-check text-cyan-400"></i> Gestione Offerte Esistenti
+                    <i class="fa-solid fa-list-check text-cyan-400"></i> Gestione e Ordinamento Offerte per Categoria
                 </h4>
-                <p class="text-xs text-slate-400">Usa "Modifica" per caricare i dati nel modulo sotto o "Elimina" per rimuovere l'offerta.</p>
+                <p class="text-xs text-slate-400">Usa le frecce <strong>▲ / ▼</strong> per spostare le offerte in alto o in basso. Il cambiamento sarà subito visibile sul sito.</p>
                 
-                <div class="bg-slate-950 border border-slate-800 rounded-xl max-h-56 overflow-y-auto p-3 space-y-2" id="admin-offers-list"></div>
+                <div class="bg-slate-950 border border-slate-800 rounded-xl max-h-72 overflow-y-auto p-3 space-y-3" id="admin-offers-list"></div>
             </div>
 
             <hr class="border-slate-800">
@@ -798,6 +798,15 @@
                 </h4>
                 <form id="offer-form" onsubmit="saveOffer(event)" class="space-y-4">
                     <input type="hidden" id="form-edit-id" value="">
+                    
+                    <!-- FLAG ATTIVA / SOSPESA -->
+                    <div class="flex items-center gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                        <input type="checkbox" id="form-active" checked class="w-4 h-4 rounded text-cyan-500 focus:ring-cyan-500 bg-slate-800 border-slate-700 cursor-pointer">
+                        <label for="form-active" class="text-xs font-semibold text-white cursor-pointer flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i> Offerta Attiva (Visibile sul sito pubblico)
+                        </label>
+                    </div>
+
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Categoria Sezione</label>
@@ -863,71 +872,79 @@
         </div>
     </div>
 
-    <!-- LOGICA JAVASCRIPT CENTRALIZZATA DA GITHUB -->
+    <!-- LOGICA JAVASCRIPT CON FRECCE SPOSTA SU / GIÙ -->
     <script>
         const ADMIN_PIN = "1976"; // Password riservata gestore
 
         let fallbackData = {
             volantinoUrl: "pdf/volantino.pdf",
             telefonia: [
-                { id: 1, brand: "WindTre", title: "Super Fibra & Mobile", price: "€22,99 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra fino a 2.5 Gbps + Giga Illimitati per i già clienti.", pdfUrl: "pdf/wind3_fibra.pdf", expiryDate: "" },
-                { id: 2, brand: "Very", title: "Very 150 Giga", price: "€5,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "150GB su rete WindTre, minuti e SMS illimitati.", pdfUrl: "pdf/very.pdf", expiryDate: "" },
-                { id: 3, brand: "Iliad", title: "Giga 180 in 5G", price: "€9,99 / mese", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "180 Giga in 5G, Minuti e SMS illimitati senza sorprese.", pdfUrl: "pdf/iliad.pdf", expiryDate: "" },
-                { id: 4, brand: "TIM", title: "5G Power Unlimited", price: "€14,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Giga Illimitati in 5G con priorità di rete.", pdfUrl: "pdf/tim_mobile.pdf", expiryDate: "" },
-                { id: 5, brand: "Sky", title: "Sky Wifi Ultra", price: "€24,90 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra Ultraveloce senza vincoli con modem Wifi Sphera.", pdfUrl: "pdf/sky_wifi.pdf", expiryDate: "" },
-                { id: 6, brand: "Kena", title: "Kena 200 Giga Promo", price: "€6,99 / mese", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "200 Giga in 4G su rete TIM, minuti illimitati.", pdfUrl: "pdf/kena.pdf", expiryDate: "" },
-                { id: 7, brand: "Ho Mobile", title: "ho. 180 Giga 5G", price: "€7,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "180 Giga in 5G su rete Vodafone, riparti quando vuoi.", pdfUrl: "pdf/homobile.pdf", expiryDate: "" }
+                { id: 1, active: true, brand: "WindTre", title: "Super Fibra & Mobile", price: "€22,99 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra fino a 2.5 Gbps + Giga Illimitati per i già clienti.", pdfUrl: "pdf/wind3_fibra.pdf", expiryDate: "" },
+                { id: 2, active: true, brand: "Very", title: "Very 150 Giga", price: "€5,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "150GB su rete WindTre, minuti e SMS illimitati.", pdfUrl: "pdf/very.pdf", expiryDate: "" },
+                { id: 3, active: true, brand: "Iliad", title: "Giga 180 in 5G", price: "€9,99 / mese", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "180 Giga in 5G, Minuti e SMS illimitati senza sorprese.", pdfUrl: "pdf/iliad.pdf", expiryDate: "" },
+                { id: 4, active: true, brand: "TIM", title: "5G Power Unlimited", price: "€14,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Giga Illimitati in 5G con priorità di rete.", pdfUrl: "pdf/tim_mobile.pdf", expiryDate: "" },
+                { id: 5, active: true, brand: "Sky", title: "Sky Wifi Ultra", price: "€24,90 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra Ultraveloce senza vincoli con modem Wifi Sphera.", pdfUrl: "pdf/sky_wifi.pdf", expiryDate: "" },
+                { id: 6, active: true, brand: "Kena", title: "Kena 200 Giga Promo", price: "€6,99 / mese", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "200 Giga in 4G su rete TIM, minuti illimitati.", pdfUrl: "pdf/kena.pdf", expiryDate: "" },
+                { id: 7, active: true, brand: "Ho Mobile", title: "ho. 180 Giga 5G", price: "€7,99 / mese", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "180 Giga in 5G su rete Vodafone, riparti quando vuoi.", pdfUrl: "pdf/homobile.pdf", expiryDate: "" }
             ],
             energia: [
-                { id: 101, brand: "Pulsee", title: "FIX 144 -36 MESI", price: "0,17195€/kWh / 0,884€/smc", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Prezzo fisso bloccato x 36 mesi e energimetro incluso", pdfUrl: "pdf/pulsee.pdf", expiryDate: "" },
-                { id: 102, brand: "Enel Energia", title: "Formidabile Luce Flex", price: "Prezzo di Costo + Fee", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Energia 100% da fonti rinnovabili.", pdfUrl: "pdf/enel_luce.pdf", expiryDate: "" },
-                { id: 103, brand: "Plenitude", title: "Trend Casa Luce & Gas", price: "Tariffa Indicizzata PUN", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "Sconto fedeltà in bolletta.", pdfUrl: "pdf/plenitude.pdf", expiryDate: "" }
+                { id: 101, active: true, brand: "Pulsee", title: "FIX 144 -36 MESI", price: "0,17195€/kWh / 0,884€/smc", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Prezzo fisso bloccato x 36 mesi e energimetro incluso", pdfUrl: "pdf/pulsee.pdf", expiryDate: "" },
+                { id: 102, active: true, brand: "Enel Energia", title: "Formidabile Luce Flex", price: "Prezzo di Costo + Fee", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Energia 100% da fonti rinnovabili.", pdfUrl: "pdf/enel_luce.pdf", expiryDate: "" },
+                { id: 103, active: true, brand: "Plenitude", title: "Trend Casa Luce & Gas", price: "Tariffa Indicizzata PUN", badge: "Novità Mese", badgeColor: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30", details: "Sconto fedeltà in bolletta.", pdfUrl: "pdf/plenitude.pdf", expiryDate: "" }
             ],
             rateizzi: [
-                { id: 201, brand: "Apple", title: "iPhone 15 128GB (Rate)", price: "€29,90 / mese", badge: "Zero Anticipo", badgeColor: "bg-blue-500/20 text-blue-400 border-blue-500/30", details: "Abbinabile a offerta TIM o WindTre. Kasko inclusa.", pdfUrl: "pdf/rate_iphone.pdf", expiryDate: "" },
-                { id: 202, brand: "Samsung", title: "Galaxy S24 5G (Rate)", price: "€24,90 / mese", badge: "Promo Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Rateizzazione in bolletta con operatore telefonico.", pdfUrl: "pdf/rate_samsung.pdf", expiryDate: "" }
+                { id: 201, active: true, brand: "Apple", title: "iPhone 15 128GB (Rate)", price: "€29,90 / mese", badge: "Zero Anticipo", badgeColor: "bg-blue-500/20 text-blue-400 border-blue-500/30", details: "Abbinabile a offerta TIM o WindTre. Kasko inclusa.", pdfUrl: "pdf/rate_iphone.pdf", expiryDate: "" },
+                { id: 202, active: true, brand: "Samsung", title: "Galaxy S24 5G (Rate)", price: "€24,90 / mese", badge: "Promo Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Rateizzazione in bolletta con operatore telefonico.", pdfUrl: "pdf/rate_samsung.pdf", expiryDate: "" }
             ],
             noleggio: [
-                { id: 501, brand: "Apple", title: "iPhone 15 Pro 128GB (Noleggio)", price: "€39,00 / mese", badge: "Novità Mese", badgeColor: "bg-amber-500/20 text-amber-400 border-amber-500/30", details: "Zero anticipo, Assicurazione Kasko/Furto inclusa. Deducibile al 100% per P.IVA.", pdfUrl: "pdf/noleggio_iphone.pdf", expiryDate: "" }
+                { id: 501, active: true, brand: "Apple", title: "iPhone 15 Pro 128GB (Noleggio)", price: "€39,00 / mese", badge: "Novità Mese", badgeColor: "bg-amber-500/20 text-amber-400 border-amber-500/30", details: "Zero anticipo, Assicurazione Kasko/Furto inclusa. Deducibile al 100% per P.IVA.", pdfUrl: "pdf/noleggio_iphone.pdf", expiryDate: "" }
             ],
             contanti: [
-                { id: 301, brand: "Xiaomi", title: "Redmi Note 13 Pro", price: "€249,00 cash", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Disponibile subito in negozio senza vincoli né abbonamenti.", pdfUrl: "pdf/xiaomi_cash.pdf", expiryDate: "" }
+                { id: 301, active: true, brand: "Xiaomi", title: "Redmi Note 13 Pro", price: "€249,00 cash", badge: "In Vigore", badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", details: "Disponibile subito in negozio senza vincoli né abbonamenti.", pdfUrl: "pdf/xiaomi_cash.pdf", expiryDate: "" }
             ],
             accessori: [
-                { id: 401, brand: "JBL", title: "Cuffie Tune Flex TWS", price: "€79,99", badge: "Novità Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Cancellazione attiva del rumore, custodia di ricarica.", pdfUrl: "pdf/accessori.pdf", expiryDate: "" }
+                { id: 401, active: true, brand: "JBL", title: "Cuffie Tune Flex TWS", price: "€79,99", badge: "Novità Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Cancellazione attiva del rumore, custodia di ricarica.", pdfUrl: "pdf/accessori.pdf", expiryDate: "" }
             ]
         };
 
         let currentData = fallbackData;
 
-        // CARICAMENTO AUTOMATICO DA GITHUB (offerte.json)
         window.addEventListener('DOMContentLoaded', () => {
-            fetch('offerte.json?' + new Date().getTime()) // Evita la cache del browser
-                .then(response => {
-                    if (!response.ok) throw new Error('File offerte.json non trovato');
-                    return response.json();
-                })
-                .then(data => {
-                    currentData = data;
-                    renderAllGrids();
-                    updateVolantinoView();
-                    impostaDataAggiornamentoDaFile(data);
-                })
-                .catch(error => {
-                    console.warn('Utilizzo dati di riserva locali:', error);
+            if (window.location.protocol === 'file:') {
+                const localSaved = localStorage.getItem('newtecstore_local_data');
+                if (localSaved) {
+                    try {
+                        currentData = JSON.parse(localSaved);
+                    } catch(e) {
+                        currentData = fallbackData;
+                    }
+                } else {
                     currentData = fallbackData;
-                    renderAllGrids();
-                    updateVolantinoView();
-                    document.getElementById('dataUltimoAggiornamento').textContent = "Configurazione Base";
-                });
+                }
+                renderAllGrids();
+                updateVolantinoView();
+                document.getElementById('dataUltimoAggiornamento').textContent = "Modalità Locale (Pronto per Modifiche)";
+            } else {
+                fetch('offerte.json?' + new Date().getTime())
+                    .then(response => {
+                        if (!response.ok) throw new Error('File offerte.json non trovato');
+                        return response.json();
+                    })
+                    .then(data => {
+                        currentData = data;
+                        renderAllGrids();
+                        updateVolantinoView();
+                        impostaDataAggiornamentoDaFile(data);
+                    })
+                    .catch(error => {
+                        console.warn('Utilizzo dati di riserva:', error);
+                        currentData = fallbackData;
+                        renderAllGrids();
+                        updateVolantinoView();
+                        document.getElementById('dataUltimoAggiornamento').textContent = "Configurazione Base";
+                    });
+            }
         });
-
-        function saveData() {
-            // Nota: in questa modalità l'area gestore serve per preparare il file JSON aggiornato da scaricare e caricare su GitHub
-            renderAllGrids();
-            renderAdminOffersList();
-            alert("Modifiche applicate in locale! Ricordati di cliccare su 'Scarica offerte.json Aggiornato' nell'Area Gestore e caricarlo su GitHub per renderle visibili a tutti.");
-        }
 
         function navigateTo(sectionId) {
             document.querySelectorAll('.view-section').forEach(sec => sec.classList.add('hidden'));
@@ -1035,9 +1052,11 @@
 
             const brandMap = new Map();
             currentData.telefonia.forEach(i => {
-                const originalName = i.brand.trim();
-                const cleanKey = originalName.toLowerCase();
-                if (!brandMap.has(cleanKey)) brandMap.set(cleanKey, originalName);
+                if (i.active !== false) {
+                    const originalName = i.brand.trim();
+                    const cleanKey = originalName.toLowerCase();
+                    if (!brandMap.has(cleanKey)) brandMap.set(cleanKey, originalName);
+                }
             });
 
             const uniqueBrands = Array.from(brandMap.values());
@@ -1062,9 +1081,11 @@
 
             const brandMap = new Map();
             currentData.telefonia.forEach(i => {
-                const originalName = i.brand.trim();
-                const cleanKey = originalName.toLowerCase();
-                if (!brandMap.has(cleanKey)) brandMap.set(cleanKey, originalName);
+                if (i.active !== false) {
+                    const originalName = i.brand.trim();
+                    const cleanKey = originalName.toLowerCase();
+                    if (!brandMap.has(cleanKey)) brandMap.set(cleanKey, originalName);
+                }
             });
             const uniqueBrands = Array.from(brandMap.values());
 
@@ -1085,16 +1106,18 @@
 
             renderQuickFilters(brandName);
 
+            const activeTelefonia = (currentData.telefonia || []).filter(i => i.active !== false);
+
             if(brandName === '') {
                 document.getElementById('brand-view-title').innerText = "Tutte le Offerte Telefonia";
                 document.getElementById('brand-view-logo').innerHTML = `<div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-xl"><i class="fa-solid fa-tower-cell"></i></div>`;
-                renderGrid('telefonia', currentData.telefonia, 'grid-telefonia-brand');
+                renderGrid('telefonia', activeTelefonia, 'grid-telefonia-brand');
             } else {
                 document.getElementById('brand-view-title').innerText = brandName;
                 document.getElementById('brand-view-logo').innerHTML = getBrandBadgeHtml(brandName, false);
 
                 const searchKey = brandName.trim().toLowerCase();
-                const filteredOffers = currentData.telefonia.filter(i => i.brand.trim().toLowerCase() === searchKey);
+                const filteredOffers = activeTelefonia.filter(i => i.brand.trim().toLowerCase() === searchKey);
                 renderGrid('telefonia', filteredOffers, 'grid-telefonia-brand');
             }
 
@@ -1115,9 +1138,11 @@
             noleggioView.classList.add('hidden');
             selectedView.classList.add('hidden');
 
+            const getActiveList = (key) => (currentData[key] || []).filter(i => i.active !== false);
+
             if(catKey === 'noleggio') {
                 noleggioView.classList.remove('hidden');
-                renderGrid('noleggio', currentData.noleggio || [], 'grid-noleggio-offers');
+                renderGrid('noleggio', getActiveList('noleggio'), 'grid-noleggio-offers');
             } else {
                 selectedView.classList.remove('hidden');
                 const titleEl = document.getElementById('cat-view-title');
@@ -1128,17 +1153,17 @@
                     titleEl.innerText = "Smartphone a Rate (Gestore)";
                     subTitleEl.innerText = "Promozioni abbinate con rateizzazione in bolletta per tutti i gestori";
                     iconEl.innerHTML = `<i class="fa-solid fa-file-invoice-dollar"></i>`;
-                    renderGrid('rateizzi', currentData.rateizzi, 'grid-selected-device');
+                    renderGrid('rateizzi', getActiveList('rateizzi'), 'grid-selected-device');
                 } else if(catKey === 'contanti') {
                     titleEl.innerText = "Senza Vincoli / Acquisto Cash";
                     subTitleEl.innerText = "Dispositivi pronti all'uso acquistabili in contanti senza vincoli contrattuali";
                     iconEl.innerHTML = `<i class="fa-solid fa-wallet"></i>`;
-                    renderGrid('contanti', currentData.contanti, 'grid-selected-device');
+                    renderGrid('contanti', getActiveList('contanti'), 'grid-selected-device');
                 } else if(catKey === 'accessori') {
                     titleEl.innerText = "Accessori in Store";
                     subTitleEl.innerText = "Cover, vetri protettivi, audio e alimentatori disponibili subito in negozio";
                     iconEl.innerHTML = `<i class="fa-solid fa-headphones"></i>`;
-                    renderGrid('accessori', currentData.accessori, 'grid-selected-device');
+                    renderGrid('accessori', getActiveList('accessori'), 'grid-selected-device');
                 }
             }
 
@@ -1157,7 +1182,8 @@
 
         function renderAllGrids() {
             renderTelefoniaBrandCards();
-            renderGrid('energia', currentData.energia, 'grid-energia');
+            const activeEnergia = (currentData.energia || []).filter(i => i.active !== false);
+            renderGrid('energia', activeEnergia, 'grid-energia');
         }
 
         function renderGrid(category, items, gridId) {
@@ -1261,9 +1287,11 @@
             categories.forEach(cat => {
                 if(currentData[cat] && Array.isArray(currentData[cat])) {
                     const matches = currentData[cat].filter(i => 
-                        (i.brand && i.brand.toLowerCase().includes(q)) || 
-                        (i.title && i.title.toLowerCase().includes(q)) || 
-                        (i.details && i.details.toLowerCase().includes(q))
+                        i.active !== false && (
+                            (i.brand && i.brand.toLowerCase().includes(q)) || 
+                            (i.title && i.title.toLowerCase().includes(q)) || 
+                            (i.details && i.details.toLowerCase().includes(q))
+                        )
                     );
                     allResults = allResults.concat(matches);
                 }
@@ -1365,20 +1393,33 @@
 
             categories.forEach(cat => {
                 if(currentData[cat.key] && currentData[cat.key].length > 0) {
-                    allItemsHtml += `<div class="text-xs font-bold text-cyan-400 pt-2 pb-1 uppercase tracking-wider">${cat.name}</div>`;
-                    currentData[cat.key].forEach(item => {
+                    allItemsHtml += `<div class="text-xs font-extrabold text-cyan-400 pt-3 pb-1 uppercase tracking-wider border-b border-slate-800">${cat.name}</div>`;
+                    
+                    currentData[cat.key].forEach((item, index) => {
                         const badgeInfo = getBadgeInfo(item);
+                        const isActive = item.active !== false;
+                        const statusBadge = isActive 
+                            ? `<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30">Attiva</span>` 
+                            : `<span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 text-[10px] font-bold border border-rose-500/30">Sospesa</span>`;
+
                         allItemsHtml += `
-                            <div class="flex items-center justify-between bg-slate-900 p-2.5 rounded-lg border border-slate-800 text-xs gap-2">
-                                <div class="truncate">
+                            <div class="flex items-center justify-between bg-slate-900/90 p-2.5 rounded-lg border border-slate-800 text-xs gap-2">
+                                <div class="truncate flex items-center gap-2">
+                                    <div class="flex flex-col gap-0.5 shrink-0">
+                                        <button onclick="moveOffer('${cat.key}', ${index}, -1)" class="w-5 h-4 bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 rounded text-[10px] flex items-center justify-center transition" title="Sposta Su">▲</button>
+                                        <button onclick="moveOffer('${cat.key}', ${index}, 1)" class="w-5 h-4 bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-300 rounded text-[10px] flex items-center justify-center transition" title="Sposta Giù">▼</button>
+                                    </div>
+                                    ${statusBadge}
                                     <span class="font-bold text-white">${item.brand}</span> - ${item.title} <span class="text-slate-400">(${item.price})</span>
-                                    <span class="ml-2 text-[10px] px-2 py-0.5 rounded border ${badgeInfo.color}">${badgeInfo.text}</span>
                                 </div>
                                 <div class="flex items-center gap-1.5 shrink-0">
-                                    <button onclick="editOffer('${cat.key}', ${item.id})" class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition font-bold flex items-center gap-1">
+                                    <button onclick="cloneOffer('${cat.key}', ${item.id})" class="px-2 py-1 rounded bg-amber-500/20 text-amber-400 hover:bg-amber-500 hover:text-slate-950 transition font-bold flex items-center gap-1" title="Clona Offerta">
+                                        <i class="fa-solid fa-copy"></i> Clona
+                                    </button>
+                                    <button onclick="editOffer('${cat.key}', ${item.id})" class="px-2 py-1 rounded bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition font-bold flex items-center gap-1">
                                         <i class="fa-solid fa-pen-to-square"></i> Modifica
                                     </button>
-                                    <button onclick="deleteOffer('${cat.key}', ${item.id})" class="px-2.5 py-1 rounded bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition font-bold flex items-center gap-1">
+                                    <button onclick="deleteOffer('${cat.key}', ${item.id})" class="px-2 py-1 rounded bg-rose-500/20 text-rose-400 hover:bg-rose-500 hover:text-white transition font-bold flex items-center gap-1">
                                         <i class="fa-solid fa-trash-can"></i> Elimina
                                     </button>
                                 </div>
@@ -1389,6 +1430,65 @@
             });
 
             container.innerHTML = allItemsHtml || `<p class="text-slate-500 text-center py-4">Nessuna offerta in archivio.</p>`;
+        }
+
+        function moveOffer(category, index, direction) {
+            const list = currentData[category];
+            if (!list) return;
+
+            const newIndex = index + direction;
+            if (newIndex < 0 || newIndex >= list.length) return; // Fuori limite
+
+            // Scambia gli elementi nell'array
+            const temp = list[index];
+            list[index] = list[newIndex];
+            list[newIndex] = temp;
+
+            // Aggiorna interfaccia e salva in locale
+            renderAdminOffersList();
+            renderAllGrids();
+
+            if (window.location.protocol === 'file:') {
+                localStorage.setItem('newtecstore_local_data', JSON.stringify(currentData));
+            }
+        }
+
+        function cloneOffer(category, id) {
+            let item = null;
+            let actualCategory = category;
+
+            if (currentData[category]) {
+                item = currentData[category].find(i => String(i.id) === String(id));
+            }
+            if (!item) {
+                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                    const found = currentData[cat] ? currentData[cat].find(i => String(i.id) === String(id)) : null;
+                    if (found) {
+                        item = found;
+                        actualCategory = cat;
+                    }
+                });
+            }
+
+            if(!item) return;
+
+            const clonedItem = {
+                ...item,
+                id: Date.now(),
+                title: item.title + " (Copia)"
+            };
+
+            if(!currentData[actualCategory]) currentData[actualCategory] = [];
+            currentData[actualCategory].unshift(clonedItem);
+
+            renderAdminOffersList();
+            renderAllGrids();
+
+            if (window.location.protocol === 'file:') {
+                localStorage.setItem('newtecstore_local_data', JSON.stringify(currentData));
+            }
+
+            alert("Offerta clonata con successo! Ora la trovi in cima alla lista nella sua categoria.");
         }
 
         function editOffer(category, id) {
@@ -1412,6 +1512,7 @@
 
             document.getElementById('form-edit-id').value = item.id;
             document.getElementById('form-category').value = actualCategory;
+            document.getElementById('form-active').checked = item.active !== false;
             document.getElementById('form-brand').value = item.brand;
             document.getElementById('form-title').value = item.title;
             document.getElementById('form-price').value = item.price;
@@ -1435,7 +1536,12 @@
                 });
                 renderAdminOffersList();
                 renderAllGrids();
-                alert("Offerta eliminata localmente. Clicca su 'Scarica offerte.json Aggiornato' e caricalo su GitHub per confermare la modifica online.");
+                
+                if (window.location.protocol === 'file:') {
+                    localStorage.setItem('newtecstore_local_data', JSON.stringify(currentData));
+                }
+                
+                alert("Offerta eliminata. Clicca su 'Scarica offerte.json Aggiornato' e caricalo su GitHub per confermare la modifica online.");
             }
         }
 
@@ -1446,6 +1552,7 @@
             
             const offerData = {
                 id: editId ? (isNaN(Number(editId)) ? editId : Number(editId)) : Date.now(),
+                active: document.getElementById('form-active').checked,
                 brand: document.getElementById('form-brand').value.trim(),
                 title: document.getElementById('form-title').value.trim(),
                 price: document.getElementById('form-price').value.trim(),
@@ -1490,12 +1597,18 @@
             renderAllGrids();
             renderAdminOffersList();
             resetForm();
+            
+            if (window.location.protocol === 'file:') {
+                localStorage.setItem('newtecstore_local_data', JSON.stringify(currentData));
+            }
+            
             alert('Modifica salvata! Ora clicca su "Scarica offerte.json Aggiornato" nel pannello e caricalo su GitHub.');
         }
 
         function resetForm() {
             document.getElementById('offer-form').reset();
             document.getElementById('form-edit-id').value = '';
+            document.getElementById('form-active').checked = true;
             document.getElementById('form-section-title').innerHTML = `<i class="fa-solid fa-plus text-cyan-400"></i> Inserisci Nuova Promozione`;
             document.getElementById('form-submit-btn').innerHTML = `<i class="fa-solid fa-plus mr-1"></i> Aggiungi Nuova Offerta`;
         }
@@ -1507,7 +1620,7 @@
             
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'offerte.json'; // Nome esatto richiesto per GitHub
+            a.download = 'offerte.json';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -1521,7 +1634,6 @@
             
             const elementoData = document.getElementById('dataUltimoAggiornamento');
             if (elementoData) {
-                // Legge la data basandosi sull'ultima modifica del file caricato o sull'orario corrente di lettura
                 elementoData.textContent = dataFormattata;
             }
         }
