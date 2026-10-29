@@ -2,6 +2,17 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1793274278500,
+      "brand": "sky",
+      "title": "Tutte le Offerte",
+      "price": "scegli la tua combinazione",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "scopri tutte le soluzioni del mondo SKY",
+      "expiryDate": "",
+      "pdfUrl": "pdf/sky/sky_ottobre.pdf"
+    },
+    {
       "id": 1793273723144,
       "brand": "sky",
       "title": "Bundle sky mobile + wifi",
@@ -10,7 +21,7 @@
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "Wifi e Mobile con Giga illimitati in 5G",
       "expiryDate": "",
-      "pdfUrl": "pdf/sky/sky_mf.pdf"
+      "pdfUrl": "pdf/sky/sky_fm.png"
     },
     {
       "id": 1793273562072,
@@ -21,7 +32,7 @@
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "250GB minuti e sms illimitati in 5G",
       "expiryDate": "",
-      "pdfUrl": "pdf/sky/sky_m.pdf"
+      "pdfUrl": "pdf/sky/sky_m.png"
     },
     {
       "id": 1793273088348,
@@ -159,12 +170,12 @@
       "id": 5,
       "brand": "Sky",
       "title": "Sky Wifi Ultra",
-      "price": "€24,90 / mese",
+      "price": "€20,90 / mese",
       "badge": "Promo Speciale",
-      "badgeColor": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "Fibra Ultraveloce senza vincoli con modem Wifi Sphera.",
-      "pdfUrl": "pdf/sky_wifi.pdf",
-      "expiryDate": ""
+      "expiryDate": "",
+      "pdfUrl": "pdf/sky_wifi.png"
     },
     {
       "id": 6,
