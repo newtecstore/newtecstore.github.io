@@ -2,6 +2,18 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1793435915939,
+      "active": true,
+      "brand": "kena",
+      "title": "100GB",
+      "price": "€5,99 /mese",
+      "badge": "Promo Speciale",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "100GB minuti illimitati 200sms / attivazione e sim Omaggio!!!",
+      "expiryDate": "2026-11-01",
+      "pdfUrl": "pdf/kena/kena_h.jpeg"
+    },
+    {
       "id": 1793285135713,
       "active": true,
       "brand": "ho mobile",
@@ -11,7 +23,7 @@
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "scopri le opportunità di Ho Mobile!!!",
       "expiryDate": "",
-      "pdfUrl": "pdf/ho/ho_vert.jpg"
+      "pdfUrl": "pdf/ho/ho_vert.pdf"
     },
     {
       "id": 1793285127212,
@@ -252,28 +264,42 @@
     },
     {
       "id": 102,
+      "active": false,
       "brand": "Enel Energia",
       "title": "Formidabile Luce Flex",
       "price": "Prezzo di Costo + Fee",
       "badge": "In Vigore",
-      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-      "details": "Energia 100% da fonti rinnovabili.",
-      "pdfUrl": "pdf/enel_luce.pdf",
-      "expiryDate": ""
-    },
-    {
-      "id": 103,
-      "brand": "Plenitude",
-      "title": "Trend Casa Luce & Gas",
-      "price": "Tariffa Indicizzata PUN",
-      "badge": "Novità Mese",
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Sconto fedeltà in bolletta.",
-      "pdfUrl": "pdf/plenitude.pdf",
-      "expiryDate": ""
+      "details": "Energia 100% da fonti rinnovabili.",
+      "expiryDate": "",
+      "pdfUrl": "pdf/enel_luce.pdf"
     }
   ],
   "rateizzi": [
+    {
+      "id": 1793437066561,
+      "active": true,
+      "brand": "TIM",
+      "title": "Apple iPhone Duo",
+      "price": "da €83 /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "nuovo iPhone pieghevole",
+      "expiryDate": "",
+      "pdfUrl": "pdf/device/tim_iphoneduo.jpeg"
+    },
+    {
+      "id": 1793436856970,
+      "active": true,
+      "brand": "TIM",
+      "title": "Volantone Halloween",
+      "price": "a partire da €4 /-mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Rateizzi da PAURA!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/device/tim_volantoneh.pdf"
+    },
     {
       "id": 201,
       "brand": "Apple",
