@@ -343,6 +343,18 @@
   ],
   "accessori": [
     {
+      "id": 1793440296283,
+      "active": true,
+      "brand": "Cellularline",
+      "title": "Tracy Tag",
+      "price": "€16,95",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Trova i tuoi oggetti!! per android e apple",
+      "expiryDate": "",
+      "pdfUrl": "pdf/accessori/tracytag.jpg"
+    },
+    {
       "id": 401,
       "brand": "JBL",
       "title": "Cuffie Tune Flex TWS",
