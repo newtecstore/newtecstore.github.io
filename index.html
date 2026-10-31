@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NewTecStore - Offerte Telefonia, Luce & Gas, Smartphone</title>
+    <title>NewTecStore - Offerte Telefonia, Luce & Gas, Smartphone e Riparazioni</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -88,21 +88,24 @@
                 </div>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <button onclick="navigateTo('home')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition hover:text-cyan-400 text-cyan-400" id="nav-home">
-                        <i class="fa-solid fa-house mr-1.5"></i> Home
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-1.5">
+                    <button onclick="navigateTo('home')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition hover:text-cyan-400 text-cyan-400" id="nav-home">
+                        <i class="fa-solid fa-house mr-1"></i> Home
                     </button>
-                    <button onclick="navigateTo('telefonia')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-telefonia">
-                        <i class="fa-solid fa-mobile-screen-button mr-1.5"></i> Telefonia & Fibra
+                    <button onclick="navigateTo('telefonia')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-telefonia">
+                        <i class="fa-solid fa-mobile-screen-button mr-1"></i> Telefonia & Fibra
                     </button>
-                    <button onclick="navigateTo('energia')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-energia">
-                        <i class="fa-solid fa-bolt mr-1.5"></i> Luce & Gas
+                    <button onclick="navigateTo('energia')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-energia">
+                        <i class="fa-solid fa-bolt mr-1"></i> Luce & Gas
                     </button>
-                    <button onclick="navigateTo('smartphone')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-smartphone">
-                        <i class="fa-solid fa-cart-shopping mr-1.5"></i> Promo Devices
+                    <button onclick="navigateTo('smartphone')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-smartphone">
+                        <i class="fa-solid fa-cart-shopping mr-1"></i> Promo Devices
                     </button>
-                    <button onclick="navigateTo('volantino')" class="nav-link px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-volantino">
-                        <i class="fa-solid fa-book-open mr-1.5"></i> Volantino
+                    <button onclick="navigateTo('riparazioni')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-riparazioni">
+                        <i class="fa-solid fa-screwdriver-wrench mr-1"></i> Riparazioni Lab
+                    </button>
+                    <button onclick="navigateTo('volantino')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-volantino">
+                        <i class="fa-solid fa-book-open mr-1"></i> Volantino
                     </button>
                 </nav>
 
@@ -111,7 +114,7 @@
                     <button onclick="checkAdminAccess()" class="px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-300 text-xs font-semibold hover:border-cyan-500 hover:text-cyan-400 transition flex items-center gap-2">
                         <i class="fa-solid fa-lock text-cyan-400"></i> Area Gestore
                     </button>
-                    <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20vorrei%20informazioni%20sulle%20offerte" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-white text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                    <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20vorrei%20informazioni" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-white text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-500/10">
                         <i class="fa-brands fa-whatsapp text-sm"></i> Contattaci
                     </a>
                 </div>
@@ -141,6 +144,9 @@
             </button>
             <button onclick="navigateTo('smartphone'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
                 <i class="fa-solid fa-cart-shopping text-cyan-400 w-5"></i> Promo Devices & Accessori
+            </button>
+            <button onclick="navigateTo('riparazioni'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
+                <i class="fa-solid fa-screwdriver-wrench text-cyan-400 w-5"></i> Riparazioni Lab
             </button>
             <button onclick="navigateTo('volantino'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
                 <i class="fa-solid fa-book-open text-cyan-400 w-5"></i> Volantino del Mese
@@ -174,14 +180,14 @@
                         </h1>
                         
                         <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
-                            Benvenuto nel portale delle promozioni di <strong>NewTecStore</strong>. Sfoglia, confronta e consulta le schede trasparenti di Telefonia, Fibra, Luce e Gas forniti direttamente dai gestori partner.
+                            Benvenuto nel portale di <strong>NewTecStore</strong> a Portici. Sfoglia le tariffe di Telefonia, Fibra, Luce, Gas e scopri i nostri servizi di laboratorio e riparazione smartphone.
                         </p>
 
                         <!-- CASSELLA DI RICERCA GLOBALE -->
                         <div class="pt-2 max-w-xl mx-auto">
                             <div class="relative flex items-center">
                                 <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400"></i>
-                                <input type="text" id="quick-search" onkeydown="if(event.key === 'Enter') handleQuickSearch()" placeholder="Cerca ovunque (es. TIM, iPhone, Pulsee, Sky, Kena...)" class="w-full bg-slate-900/90 border border-slate-700/80 rounded-2xl py-3.5 pl-12 pr-28 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition shadow-inner">
+                                <input type="text" id="quick-search" onkeydown="if(event.key === 'Enter') handleQuickSearch()" placeholder="Cerca ovunque (es. TIM, iPhone, Pulsee, display, saldatura...)" class="w-full bg-slate-900/90 border border-slate-700/80 rounded-2xl py-3.5 pl-12 pr-28 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500 transition shadow-inner">
                                 <button onclick="handleQuickSearch()" class="absolute right-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
                                     Cerca
                                 </button>
@@ -189,61 +195,50 @@
                         </div>
                     </div>
 
-                    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                         <div onclick="navigateTo('telefonia')" class="glass-card rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
-                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-cyan-500/10 transition">
-                                <i class="fa-solid fa-tower-cell text-9xl"></i>
-                            </div>
-                            <div class="w-14 h-14 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-colors duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
                                 <i class="fa-solid fa-mobile-screen-button"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Telefonia & Fibra</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Scegli tra i nostri operatori top partner: WindTre, Iliad, TIM, Sky, Very, Kena, Ho. Mobile.</p>
-                            <span class="inline-flex items-center text-sm font-semibold text-cyan-400 group-hover:translate-x-1 transition">
-                                Sfoglia Operatori <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                            </span>
+                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition">Telefonia & Fibra</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">WindTre, Iliad, TIM, Sky, Very, Kena, Ho.</p>
+                            <span class="inline-flex items-center text-xs font-semibold text-cyan-400">Sfoglia <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
                         <div onclick="navigateTo('energia')" class="glass-card rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-green group relative overflow-hidden">
-                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-emerald-500/10 transition">
-                                <i class="fa-solid fa-bolt text-9xl"></i>
-                            </div>
-                            <div class="w-14 h-14 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition">
                                 <i class="fa-solid fa-lightbulb"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition">Luce & Gas</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Risparmia sulle utenze domestiche e aziendali. Plenitude, Enel, Pulsee e tariffe bloccate.</p>
-                            <span class="inline-flex items-center text-sm font-semibold text-emerald-400 group-hover:translate-x-1 transition">
-                                Scopri Risparmio <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                            </span>
+                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition">Luce & Gas</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Plenitude, Enel, Pulsee e tariffe fisse.</p>
+                            <span class="inline-flex items-center text-xs font-semibold text-emerald-400">Scopri <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
                         <div onclick="navigateTo('smartphone')" class="glass-card rounded-2xl p-6 hover:border-rose-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-red group relative overflow-hidden">
-                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-rose-500/10 transition">
-                                <i class="fa-solid fa-laptop text-9xl"></i>
-                            </div>
-                            <div class="w-14 h-14 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-rose-500 group-hover:text-white transition">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-rose-400 transition">Promo Devices</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Smartphone a rate, Noleggio Operativo, acquisto in contanti senza vincoli e accessori.</p>
-                            <span class="inline-flex items-center text-sm font-semibold text-rose-400 group-hover:translate-x-1 transition">
-                                Vedi Prodotti <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                            </span>
+                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-rose-400 transition">Promo Devices</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Rate, Noleggio Kasko e contanti.</p>
+                            <span class="inline-flex items-center text-xs font-semibold text-rose-400">Vedi Prodotti <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        </div>
+
+                        <div onclick="navigateTo('riparazioni')" class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition">Riparazioni Lab</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Micro-saldatura e ricambi express.</p>
+                            <span class="inline-flex items-center text-xs font-semibold text-amber-400">Assistenza <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
                         <div onclick="navigateTo('volantino')" class="glass-card rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
-                            <div class="absolute -right-6 -bottom-6 text-slate-800/30 group-hover:text-purple-500/10 transition">
-                                <i class="fa-solid fa-file-pdf text-9xl"></i>
-                            </div>
-                            <div class="w-14 h-14 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-purple-500 group-hover:text-white transition">
                                 <i class="fa-solid fa-book-open"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition">Volantino Mese</h3>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">Sfoglia il volantino cartaceo e digitale completo con tutte le promozioni del mese.</p>
-                            <span class="inline-flex items-center text-sm font-semibold text-purple-400 group-hover:translate-x-1 transition">
-                                Apri Volantino <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                            </span>
+                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition">Volantino Mese</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Sfoglia il catalogo completo.</p>
+                            <span class="inline-flex items-center text-xs font-semibold text-purple-400">Apri <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
                     </div>
 
@@ -251,12 +246,12 @@
                         <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
                             <div class="space-y-3 text-center lg:text-left">
                                 <span class="px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 text-xs font-bold uppercase tracking-wider">Servizio In Store Gratis</span>
-                                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Non sai quale gestore o tariffa scegliere?</h2>
-                                <p class="text-slate-300 max-w-2xl text-sm sm:text-base">Porta la tua ultima bolletta o la tua sim attuale in negozio. Effettuiamo un'analisi gratuita dei costi senza alcun impegno!</p>
+                                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Analisi Bolletta o Preventivo Riparazione Gratuito</h2>
+                                <p class="text-slate-300 max-w-2xl text-sm sm:text-base">Passa in negozio in Via Benvenuto Cellini 20 a Portici. Ti aspettiamo per un check-up completo senza impegno!</p>
                             </div>
                             <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-                                <a href="https://wa.me/393330000000?text=Vorrei%20fissare%20un%20appuntamento%20per%20un%20confronto%20bolletta" target="_blank" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm text-center transition shadow-lg shadow-cyan-500/25">
-                                    <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Richiedi Consulenza
+                                <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20vorrei%20informazioni%20in%20merito%20al%20vostro%20laboratorio" target="_blank" class="px-6 py-3.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm text-center transition shadow-lg shadow-cyan-500/25">
+                                    <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Contattaci Subito
                                 </a>
                             </div>
                         </div>
@@ -572,15 +567,143 @@
             </div>
         </section>
 
-        <!-- VOLANTINO SECTION -->
-        <section id="sec-volantino" class="view-section hidden py-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xs uppercase">Edizione Digitale</span>
-                    <h2 class="text-3xl font-black text-white mt-2">Volantino Promozionale Del Mese</h2>
-                    <p class="text-slate-400 text-sm mt-2">Sfoglia direttamente online il catalogo completo di tutte le promo attive per questo mese in negozio.</p>
+        <!-- RIPARAZIONI & ASSISTENZA LAB SECTION -->
+        <section id="sec-riparazioni" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-800 pb-6 gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 text-amber-400 font-bold text-sm mb-1 uppercase tracking-wider">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> Laboratorio Tecnico Specializzato
+                        </div>
+                        <h2 class="text-3xl font-black text-white">Riparazioni & Assistenza Smartphone</h2>
+                        <p class="text-slate-400 text-sm mt-1">Interventi professionali di micro-elettronica, diagnostica avanzata e sostituzione componenti in sede a Portici.</p>
+                    </div>
                 </div>
 
+                <!-- BADGE CENTRO ASSISTENZA AUTORIZZATO OPPO CON LOGO -->
+                <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-900 border border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="absolute -right-10 -bottom-10 text-emerald-500/10 pointer-events-none">
+                        <i class="fa-solid fa-shield-check text-9xl"></i>
+                    </div>
+                    <div class="flex items-center gap-5 relative z-10 text-center sm:text-left flex-col sm:flex-row">
+                        <!-- Logo OPPO inserito nel badge -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-900 border border-emerald-500/40 flex items-center justify-center p-2 shrink-0 shadow-lg overflow-hidden">
+                            <img src="loghi/oppo.png" alt="OPPO Logo" class="w-full h-full object-contain" onerror="this.parentElement.innerHTML='<i class=\'fa-solid fa-award text-3xl text-emerald-400\'></i>';">
+                        </div>
+                        <div class="space-y-1">
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-extrabold uppercase tracking-widest border border-emerald-500/30">Certificazione Ufficiale</span>
+                            <h3 class="text-xl sm:text-2xl font-black text-white">Centro Assistenza Autorizzato OPPO</h3>
+                            <p class="text-xs sm:text-sm text-slate-300">Riparazioni certificate con standard della casa madre, utilizzo esclusivo di componenti originali e mantenimento della garanzia ufficiale.</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 relative z-10">
+                        <a href="https://wa.me/393330000000?text=Ciao%20NewTecStore,%20ho%20bisogno%20di%20assistenza%20in%20garanzia%20o%20fuori%20garanzia%20per%20il%20mio%20smartphone%20OPPO" target="_blank" class="px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition shadow-lg shadow-emerald-500/20 flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Info Assistenza OPPO
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GRIGLIA SERVIZI LAB -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/50 transition space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Micro-Saldatura & Schede Madri</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Riparazioni a livello componentistico su logica: corti su linee $V_{BAT}$, sostituzione chip OVP, ponticelli di bypass, condensatori MLCC e connettori FPC.
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/50 transition space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Display & Vetri Temprati</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Sostituzione rapida display originali e compatibili di alta qualità per Apple iPhone, Samsung, Xiaomi, Redmi e principali brand con test di collaudo completi.
+                        </p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-amber-500/50 transition space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-battery-full"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Batterie & Rigenerazione</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Sostituzione batterie usurate con celle ad alta efficienza, ripristino autonomia originaria e test diagnostici approfonditi con alimentatori da banco professionali.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- BOX: PRENOTA RITIRO GRATIS NEI COMUNI LIMITROFI -->
+                <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-amber-500/40 rounded-3xl p-6 lg:p-10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                        <div class="lg:col-span-6 space-y-4 text-center lg:text-left">
+                            <span class="px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-bold uppercase tracking-wider">Comodo & Senza Stress</span>
+                            <h3 class="text-2xl sm:text-3xl font-black text-white">Prenota il Ritiro Gratuito a Domicilio</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed">
+                                Il tuo smartphone è rotto e non puoi muoverti? Veniamo a prenderlo direttamente a casa o in ufficio <strong>gratis</strong> se ti trovi nei comuni limitrofi (Portici, Ercolano, San Giorgio a Cremano, Torre del Greco e zone limitrofe). Lo ripariamo in laboratorio e te lo riconsegniamo!
+                            </p>
+                            <div class="pt-2 text-xs text-amber-300 flex items-center justify-center lg:justify-start gap-2">
+                                <i class="fa-solid fa-circle-check"></i> Servizio attivo per i comuni limitrofi al negozio.
+                            </div>
+                        </div>
+
+                        <!-- FORM INTERATTIVO RITIRO -->
+                        <div class="lg:col-span-6 bg-slate-950/80 border border-slate-800 p-6 rounded-2xl shadow-inner space-y-3">
+                            <h4 class="font-bold text-white text-base flex items-center gap-2">
+                                <i class="fa-solid fa-truck-fast text-amber-400"></i> Richiedi Ritiro a Domicilio
+                            </h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Il tuo Nome e Cognome</label>
+                                    <input type="text" id="ritiro-nome" placeholder="es. Mario Rossi" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Il tuo Comune</label>
+                                        <select id="ritiro-comune" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                            <option value="Portici">📍 Portici (Sede)</option>
+                                            <option value="Ercolano">📍 Ercolano</option>
+                                            <option value="San Giorgio a Cremano">📍 San Giorgio a Cremano</option>
+                                            <option value="Torre del Greco">📍 Torre del Greco</option>
+                                            <option value="Napoli (Zone limitrofe)">📍 Napoli (Zone limitrofe)</option>
+                                            <option value="Altro Comune">📍 Altro Comune (Verifica)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-300 mb-1">Recapito Telefonico</label>
+                                        <input type="tel" id="ritiro-tel" placeholder="es. 333 1234567" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Modello Dispositivo & Problema</label>
+                                    <input type="text" id="ritiro-problema" placeholder="es. OPPO Reno - Vetro rotto" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-amber-500 outline-none">
+                                </div>
+                                <button onclick="inviaRichiestaRitiroWhatsApp()" class="w-full py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-base"></i> Invia Richiesta Ritiro su WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VOLANTINO SECTION -->
+        <section id="sec-volantino" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+                <div class="text-center max-w-2xl mx-auto mb-6">
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xs uppercase">Edizione Digitale & Storico</span>
+                    <h2 class="text-3xl font-black text-white mt-2">Volantino Promozionale Del Mese</h2>
+                    <p class="text-slate-400 text-sm mt-2">Sfoglia online il catalogo completo delle promo attive o consulta l'archivio dei mesi passati.</p>
+                </div>
+
+                <!-- VOLANTINO PRINCIPALE CORRENTE -->
                 <div class="glass-card rounded-3xl p-6 lg:p-8 max-w-4xl mx-auto border border-purple-500/30">
                     <div class="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-slate-700/60 pb-6 mb-6">
                         <div class="flex items-center gap-4">
@@ -588,24 +711,65 @@
                                 <i class="fa-solid fa-file-pdf"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white" id="flyer-title">Volantino Offerte Mese</h4>
-                                <p class="text-xs text-slate-400">Valido fino ad esaurimento scorte</p>
+                                <h4 class="font-bold text-lg text-white" id="flyer-title">Volantino Ottobre 2026 (Corrente)</h4>
+                                <p class="text-xs text-slate-400">Valido per tutto il mese in corso</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
-                            <button onclick="openPdfViewer(currentData.volantinoUrl, 'Volantino Promozionale')" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold transition flex items-center gap-2 shadow-lg shadow-purple-600/30">
+                            <button onclick="openPdfViewer(currentData.volantinoUrl, 'Volantino Corrente')" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-sm font-bold transition flex items-center gap-2 shadow-lg shadow-purple-600/30">
                                 <i class="fa-solid fa-expand"></i> Schermo Intero
                             </button>
                             <a id="flyer-download-btn" href="#" download class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-bold border border-slate-700 transition flex items-center gap-2">
-                                <i class="fa-solid fa-download"></i> Scarica Documento
+                                <i class="fa-solid fa-download"></i> Scarica
                             </a>
                         </div>
                     </div>
 
-                    <div class="w-full h-[600px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 relative">
+                    <div class="w-full h-[500px] bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 relative">
                         <iframe id="flyer-iframe" src="" class="w-full h-full border-none"></iframe>
                     </div>
                 </div>
+
+                <!-- ARCHIVIO STORICO VOLANTINI PRECEDENTI -->
+                <div class="max-w-4xl mx-auto space-y-4 pt-6">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-box-archive text-purple-400"></i> Archivio Volantini Passati
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        
+                        <div class="glass-card rounded-2xl p-4 flex items-center justify-between border border-slate-800 hover:border-purple-500/50 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center">
+                                    <i class="fa-solid fa-file-pdf text-rose-500"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-sm text-white">Settembre 2026</h5>
+                                    <p class="text-xs text-slate-400">Edizione precedente</p>
+                                </div>
+                            </div>
+                            <button onclick="openPdfViewer('pdf/volantino-settembre-2026.pdf', 'Volantino Settembre 2026')" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-purple-600 hover:text-white text-slate-200 text-xs font-bold transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-eye"></i> Sfoglia
+                            </button>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-4 flex items-center justify-between border border-slate-800 hover:border-purple-500/50 transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center">
+                                    <i class="fa-solid fa-file-pdf text-rose-500"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-sm text-white">Agosto 2026</h5>
+                                    <p class="text-xs text-slate-400">Edizione estiva</p>
+                                </div>
+                            </div>
+                            <button onclick="openPdfViewer('pdf/volantino-agosto-2026.pdf', 'Volantino Agosto 2026')" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-purple-600 hover:text-white text-slate-200 text-xs font-bold transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-eye"></i> Sfoglia
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -620,7 +784,7 @@
                         <img id="footer-logo-img" src="logo.png" alt="NewTecStore Logo Footer" class="h-10 w-auto object-contain" onerror="this.onerror=null; this.src='new tec.png';">
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">
-                        Il tuo punto di riferimento sul territorio per la telefonia mobile e fissa, fibra ottica ed efficientamento energetico luce e gas.
+                        Il tuo punto di riferimento a Portici per la telefonia mobile e fissa, fibra ottica, efficientamento energetico luce/gas e riparazioni smartphone di laboratorio.
                     </p>
                     <div class="pt-2">
                         <a href="https://unit.link/newtecstore" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:underline">
@@ -642,7 +806,7 @@
                     <h4 class="text-sm font-bold text-white uppercase tracking-wider"><i class="fa-solid fa-location-dot text-cyan-400 mr-2"></i> Dove Siamo</h4>
                     <p class="text-xs text-slate-400"><i class="fa-solid fa-house-chimney text-slate-500 mr-1.5"></i> Via Benvenuto Cellini, 20 - Portici (NA)</p>
                     <p class="text-xs text-slate-400"><i class="fa-solid fa-id-card text-slate-500 mr-1.5"></i> P.IVA: <span class="text-slate-300 font-medium">03608551218</span></p>
-                    <p class="text-xs text-slate-400"><i class="fa-solid fa-envelope text-slate-500 mr-1.5"></i> info@newtecstore.it</p>
+                    <p class="text-xs text-slate-400"><i class="fa-solid fa-envelope text-slate-500 mr-1.5"></i> <a href="mailto:new-tec@libero.it" class="text-slate-300 hover:underline">new-tec@libero.it</a></p>
                 </div>
 
                 <div class="space-y-3">
@@ -689,7 +853,7 @@
                 <p>La presente informativa descrive le modalità di gestione del sito web di <strong>NewTecStore</strong> in riferimento al trattamento dei dati personali degli utenti che consultano il portale o utilizzano i nostri servizi di contatto e consulenza.</p>
                 
                 <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">1. Titolare del Trattamento</h4>
-                <p>Il titolare del trattamento dei dati è <strong>NewTecStore</strong> (New Tec di Cantore Giovanni), con sede in Via Benvenuto Cellini, 20 - Portici (NA). P.IVA: 03608551218. Per qualsiasi richiesta o informazione relativa alla privacy, è possibile contattarci all'indirizzo email: <a href="mailto:info@newtecstore.it" class="text-cyan-400 hover:underline">info@newtecstore.it</a>.</p>
+                <p>Il titolare del trattamento dei dati è <strong>NewTecStore</strong> (New Tec di Cantore Giovanni), con sede in Via Benvenuto Cellini, 20 - Portici (NA). P.IVA: 03608551218. Per qualsiasi richiesta o informazione relativa alla privacy, è possibile contattarci all'indirizzo email: <a href="mailto:new-tec@libero.it" class="text-cyan-400 hover:underline">new-tec@libero.it</a>.</p>
 
                 <h4 class="font-bold text-cyan-400 text-sm uppercase tracking-wider pt-2">2. Dati Raccolti e Finalità</h4>
                 <p>Il nostro sito ha natura prevalentemente informativa e di vetrina promozionale. I dati personali inviati volontariamente dagli utenti (es. tramite form di richiesta preventivo o chat WhatsApp per noleggio o analisi bollette):</p>
@@ -1036,6 +1200,7 @@
             else if (b.includes('apple')) { fileName = 'apple.png'; fallbackBg = 'bg-slate-800'; }
             else if (b.includes('samsung')) { fileName = 'samsung.png'; fallbackBg = 'bg-[#1428A0]'; }
             else if (b.includes('xiaomi')) { fileName = 'xiaomi.png'; fallbackBg = 'bg-orange-500'; }
+            else if (b.includes('oppo')) { fileName = 'oppo.png'; fallbackBg = 'bg-emerald-600'; }
 
             const sizeClass = isLargeCard ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-2xl p-2.5' : 'w-12 h-12 rounded-xl p-1.5';
             const fallbackSizeClass = isLargeCard ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-2xl text-lg font-black' : 'w-12 h-12 rounded-xl text-xs font-black';
@@ -1242,7 +1407,8 @@
                     `;
                 }
 
-                const whatsAppMsg = encodeURIComponent(`Ciao NewTecStore, vorrei informazioni / attivare l'offerta: ${item.brand} - ${item.title} (${item.price})`);
+                // WHATSAPP CON MESSAGGIO MIRATO PER OGNI OFFERTA
+                const whatsAppMsg = encodeURIComponent(`Ciao NewTecStore, vorrei bloccare o avere maggiori informazioni sull'offerta vista sul vostro sito: *${item.brand} - ${item.title}* (${item.price}). Mi ricontattate?`);
 
                 return `
                 <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-slate-700 transition-all duration-300">
@@ -1269,14 +1435,31 @@
                     </div>
                     <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
                         <button onclick="openPdfViewer('${item.pdfUrl}', '${item.brand.replace(/'/g, "\\'")} - ${item.title.replace(/'/g, "\\'")}')" class="flex-grow py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-file-invoice text-cyan-400"></i> Vedi Prospetto / Anteprima
+                            <i class="fa-solid fa-file-invoice text-cyan-400"></i> Vedi Prospetto
                         </button>
-                        <a href="https://wa.me/393330000000?text=${whatsAppMsg}" target="_blank" class="p-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white transition" title="Richiedi su WhatsApp">
+                        <a href="https://wa.me/393330000000?text=${whatsAppMsg}" target="_blank" class="p-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white transition shadow-md" title="Richiedi offerta su WhatsApp">
                             <i class="fa-brands fa-whatsapp text-base"></i>
                         </a>
                     </div>
                 </div>
             `}).join('');
+        }
+
+        function inviaRichiestaRitiroWhatsApp() {
+            const nome = document.getElementById('ritiro-nome').value.trim();
+            const comune = document.getElementById('ritiro-comune').value;
+            const tel = document.getElementById('ritiro-tel').value.trim();
+            const problema = document.getElementById('ritiro-problema').value.trim();
+
+            if(!nome || !tel || !problema) {
+                alert("Per favore compila tutti i campi (Nome, Telefono e Problema) per procedere con la richiesta di ritiro.");
+                return;
+            }
+
+            const testo = `Ciao NewTecStore, vorrei prenotare il *ritiro gratuito a domicilio* per riparazione.\n\n👤 *Cliente:* ${nome}\n📍 *Comune:* ${comune}\n📞 *Telefono:* ${tel}\n📱 *Dispositivo/Problema:* ${problema}\n\nMi ricontattate per accordarci sull'orario?`;
+            
+            const urlWhatsApp = `https://wa.me/393330000000?text=${encodeURIComponent(testo)}`;
+            window.open(urlWhatsApp, '_blank');
         }
 
         function handleQuickSearch() {
