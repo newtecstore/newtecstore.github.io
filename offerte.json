@@ -313,17 +313,6 @@
       "details": "Zero anticipo, Assicurazione Kasko/Furto inclusa. Deducibile al 100% per P.IVA.",
       "expiryDate": "",
       "pdfUrl": "pdf/device/rent_iphone18pro.png"
-    },
-    {
-      "id": 501,
-      "brand": "Apple",
-      "title": "iPhone 15 Pro 128GB (Noleggio)",
-      "price": "€39,00 / mese",
-      "badge": "Novità Mese",
-      "badgeColor": "bg-amber-500/20 text-amber-400 border-amber-500/30",
-      "details": "Zero anticipo, Assicurazione Kasko/Furto inclusa. Deducibile al 100% per P.IVA.",
-      "pdfUrl": "pdf/noleggio_iphone.pdf",
-      "expiryDate": ""
     }
   ],
   "contanti": [
@@ -341,14 +330,15 @@
     },
     {
       "id": 301,
+      "active": false,
       "brand": "Xiaomi",
       "title": "Redmi Note 13 Pro",
       "price": "€249,00 cash",
       "badge": "In Vigore",
-      "badgeColor": "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "Disponibile subito in negozio senza vincoli né abbonamenti.",
-      "pdfUrl": "pdf/xiaomi_cash.pdf",
-      "expiryDate": ""
+      "expiryDate": "",
+      "pdfUrl": "pdf/xiaomi_cash.pdf"
     }
   ],
   "accessori": [
