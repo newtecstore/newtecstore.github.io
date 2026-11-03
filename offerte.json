@@ -227,6 +227,18 @@
   ],
   "energia": [
     {
+      "id": 1793696751427,
+      "active": true,
+      "brand": "sinergy",
+      "title": "Super Promo Prezzo Fisso",
+      "price": "0,178€/kWh / 0,88€/smc",
+      "badge": "Promo Speciale",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "PVC a 9€",
+      "expiryDate": "2026-11-07",
+      "pdfUrl": "pdf/lucegas/sinergy_fix.png"
+    },
+    {
       "id": 1793285880346,
       "active": true,
       "brand": "edison",
@@ -343,27 +355,16 @@
   ],
   "accessori": [
     {
-      "id": 1793440296283,
-      "active": true,
-      "brand": "Cellularline",
-      "title": "Tracy Tag",
-      "price": "€16,95",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Trova i tuoi oggetti!! per android e apple",
-      "expiryDate": "",
-      "pdfUrl": "pdf/accessori/tracytag.jpg"
-    },
-    {
       "id": 401,
+      "active": false,
       "brand": "JBL",
       "title": "Cuffie Tune Flex TWS",
       "price": "€79,99",
       "badge": "Novità Mese",
-      "badgeColor": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "Cancellazione attiva del rumore, custodia di ricarica.",
-      "pdfUrl": "pdf/accessori.pdf",
-      "expiryDate": ""
+      "expiryDate": "",
+      "pdfUrl": "pdf/accessori.pdf"
     }
   ]
 }
