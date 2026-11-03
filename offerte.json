@@ -2,6 +2,18 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1793700013923,
+      "active": true,
+      "brand": "tim",
+      "title": "Offerte Mobili",
+      "price": "a partire da € 4,99 /mese",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Offerte per MNP divise per operatore di provenienza",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_tutte.jpeg"
+    },
+    {
       "id": 1793435915939,
       "active": true,
       "brand": "kena",
@@ -148,18 +160,8 @@
       "pdfUrl": "pdf/very/very_5,99.pdf"
     },
     {
-      "id": 1793269752891,
-      "brand": "TIM",
-      "title": "Offerte Halloween",
-      "price": "a partire da € 4,99 /mese",
-      "badge": "Promo Speciale",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Tariffe mostruose!!!!",
-      "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_h.mp4"
-    },
-    {
       "id": 1793272914475,
+      "active": false,
       "brand": "tim",
       "title": "MNP da operatori Premium",
       "price": "€7,99 / mese",
