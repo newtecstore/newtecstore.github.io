@@ -229,6 +229,18 @@
   ],
   "energia": [
     {
+      "id": 1794049846014,
+      "active": true,
+      "brand": "sinergy",
+      "title": "Scegli Zero!",
+      "price": "-100% spread zero €/kW",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Paghi l'energia al prezzo di mercato (PUN) senza maggiorazioni!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/lucegas/sinergy_0spread.png"
+    },
+    {
       "id": 1793696751427,
       "active": true,
       "brand": "sinergy",
