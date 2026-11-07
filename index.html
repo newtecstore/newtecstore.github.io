@@ -334,7 +334,7 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-energia"></div>
 
-                <!-- BOX DEDICATO: ANALISI & PREVENTIVO BOLLETTA VIA EMAIL (FORMSPREE) -->
+                <!-- BOX DEDICATO: ANALISI & PREVENTIVO BOLLETTA VIA WHATSAPP -->
                 <div class="mt-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-emerald-500/40 rounded-3xl p-6 lg:p-10 shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
                     
@@ -344,7 +344,7 @@
                             <h3 class="text-2xl sm:text-3xl font-black text-white">Vuoi tagliare i costi in bolletta? Inviaci la tua fattura!</h3>
                             <p class="text-slate-300 text-sm leading-relaxed">
                                 I nostri esperti analizzeranno gratuitamente i tuoi consumi attuali per verificare se stai pagando troppo. 
-                                Compila il modulo accanto per inviarci la bolletta direttamente via email, oppure usa WhatsApp per una risposta immediata.
+                                Compila il modulo accanto per inviarci i tuoi dati e allegare comodamente la foto della bolletta direttamente su WhatsApp.
                             </p>
                             <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                                 <a href="https://wa.me/390810282087?text=Ciao%20NewTecStore,%20vorrei%20informazioni%20sulle%20offerte%20Luce%20e%20Gas" target="_blank" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
@@ -353,38 +353,37 @@
                             </div>
                         </div>
 
-                        <!-- FORM REALE COLLEGATO VIA FORMSPREE -->
+                        <!-- FORM INTERATTIVO LUCE & GAS VIA WHATSAPP -->
                         <div class="lg:col-span-6 bg-slate-950/80 border border-slate-800 p-6 rounded-2xl shadow-inner space-y-4">
                             <h4 class="font-bold text-white text-base flex items-center gap-2">
-                                <i class="fa-solid fa-file-invoice text-emerald-400"></i> Richiedi Preventivo via Email
+                                <i class="fa-solid fa-file-invoice text-emerald-400"></i> Richiedi Analisi Bolletta su WhatsApp
                             </h4>
-                            <form action="https://formspree.io/f/mvkknqzp" method="POST" enctype="multipart/form-data" class="space-y-3">
+                            <div class="space-y-3">
                                 <div>
                                     <label class="block text-xs font-medium text-slate-300 mb-1">Il tuo Nome e Cognome</label>
-                                    <input type="text" name="nome" placeholder="es. Mario Rossi" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
+                                    <input type="text" id="luce-nome" placeholder="es. Mario Rossi" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
                                 </div>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div>
                                         <label class="block text-xs font-medium text-slate-300 mb-1">Recapito Telefonico</label>
-                                        <input type="tel" name="telefono" placeholder="es. 081 0282087" required class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
+                                        <input type="tel" id="luce-tel" placeholder="es. 081 0282087" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
                                     </div>
                                     <div>
                                         <label class="block text-xs font-medium text-slate-300 mb-1">Tipo Utenza</label>
-                                        <select name="utenza" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
+                                        <select id="luce-utenza" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs text-white focus:border-emerald-500 outline-none">
                                             <option value="Luce e Gas">⚡ Luce & Gas</option>
                                             <option value="Solo Luce">💡 Solo Luce</option>
                                             <option value="Solo Gas">🔥 Solo Gas</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div>
-                                    <label class="block text-xs font-medium text-slate-300 mb-1">Allega Foto o PDF Bolletta</label>
-                                    <input type="file" name="bolletta" accept="image/*,.pdf" class="w-full text-xs text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-500/20 file:text-emerald-400 hover:file:bg-emerald-500/30 file:cursor-pointer">
+                                <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-300 leading-relaxed">
+                                    <i class="fa-solid fa-circle-info mr-1"></i> Cliccando sul pulsante si aprirà WhatsApp: potrai inviare i dati e allegare comodamente la foto o il PDF della bolletta in un sol colpo!
                                 </div>
-                                <button type="submit" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
-                                    <i class="fa-solid fa-paper-plane"></i> Invia Richiesta e Bolletta
+                                <button onclick="inviaRichiestaLuceGasWhatsApp()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-lg flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-base"></i> Invia Dati e Bolletta su WhatsApp
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1446,6 +1445,22 @@
                     </div>
                 </div>
             `}).join('');
+        }
+
+        function inviaRichiestaLuceGasWhatsApp() {
+            const nome = document.getElementById('luce-nome').value.trim();
+            const tel = document.getElementById('luce-tel').value.trim();
+            const utenza = document.getElementById('luce-utenza').value;
+
+            if(!nome || !tel) {
+                alert("Per favore inserisci il tuo Nome e il Recapito Telefonico per procedere.");
+                return;
+            }
+
+            const testo = `Ciao NewTecStore, vorrei richiedere un'analisi e un preventivo gratuito per la mia bolletta.\n\n👤 *Cliente:* ${nome}\n📞 *Telefono:* ${tel}\n⚡ *Utenza:* ${utenza}\n\n[Allego qui di seguito la foto o il PDF della bolletta]`;
+            
+            const urlWhatsApp = `https://wa.me/390810282087?text=${encodeURIComponent(testo)}`;
+            window.open(urlWhatsApp, '_blank');
         }
 
         function inviaRichiestaRitiroWhatsApp() {
