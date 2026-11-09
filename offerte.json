@@ -1,4 +1,6 @@
 {
+  "version": "1.1",
+  "lastUpdated": "09/11/2026",
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
@@ -277,18 +279,6 @@
       "pdfUrl": "pdf/lucegas/edison_fix.pdf"
     },
     {
-      "id": 1793284403265,
-      "active": true,
-      "brand": "fastweb",
-      "title": "Luce Fix x Te",
-      "price": "0,119 €/kWh",
-      "badge": "Promo Speciale",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Prezzo fisso bloccato",
-      "expiryDate": "2026-10-30",
-      "pdfUrl": "pdf/lucegas/fastweb_fix.jpg"
-    },
-    {
       "id": 101,
       "active": true,
       "brand": "Pulsee",
@@ -392,6 +382,5 @@
       "expiryDate": "",
       "pdfUrl": "pdf/accessori.pdf"
     }
-  ],
-  "lastUpdated": "09/11/2026"
+  ]
 }
