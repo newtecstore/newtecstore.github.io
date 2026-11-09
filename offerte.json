@@ -2,6 +2,18 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1794214104181,
+      "active": true,
+      "brand": "Kena",
+      "title": "nuova SIM o MNP Entry Price!!",
+      "price": "a partire €4,99 / mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "tutte le offerte KENA da €4,99 a €7,99 in 5G",
+      "expiryDate": "",
+      "pdfUrl": "pdf/kena/kena_all.jpeg"
+    },
+    {
       "id": 1793700013923,
       "active": true,
       "brand": "tim",
