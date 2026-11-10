@@ -1,8 +1,20 @@
 {
   "version": "1.1",
-  "lastUpdated": "09/11/2026",
+  "lastUpdated": "10/11/2026",
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
+    {
+      "id": 1794325733373,
+      "active": true,
+      "brand": "kena",
+      "title": "kena apple music",
+      "price": "7,99€ / mese anzichè 9,99€",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "senza costo di attivazione",
+      "expiryDate": "",
+      "pdfUrl": "pdf/kena/kena_apple.jpeg"
+    },
     {
       "id": 1794214104181,
       "active": true,
