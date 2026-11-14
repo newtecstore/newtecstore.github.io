@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "lastUpdated": "10/11/2026",
+  "lastUpdated": "14/11/2026",
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
@@ -316,6 +316,18 @@
     }
   ],
   "rateizzi": [
+    {
+      "id": 1794653092694,
+      "active": true,
+      "brand": "TIM",
+      "title": "2x1 Moto G57 8/256GB",
+      "price": "6€ x 30 mesi",
+      "badge": "In Vigore",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Due al prezzo di Uno!!!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/device/tim_motog57.jpeg"
+    },
     {
       "id": 1793437066561,
       "active": true,
