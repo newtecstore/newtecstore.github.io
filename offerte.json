@@ -4,6 +4,18 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1794853435138,
+      "active": true,
+      "brand": "sky",
+      "title": "BLACK FRIDAY SKY",
+      "price": "tutto in un clic!",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Dai un occhiata a tutta l'offerta sky disponibile",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/sky/sky_allbf.jpg"
+    },
+    {
       "id": 1794824286746,
       "active": true,
       "brand": "sky",
