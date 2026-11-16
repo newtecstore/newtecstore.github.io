@@ -387,18 +387,6 @@
       "details": "nuovo iPhone pieghevole",
       "expiryDate": "",
       "pdfUrl": "pdf/device/tim_appleduo.jpeg"
-    },
-    {
-      "id": 1793436856970,
-      "active": true,
-      "brand": "TIM",
-      "title": "Volantone Halloween",
-      "price": "a partire da €4 /-mese",
-      "badge": "In Vigore",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Rateizzi da PAURA!!!",
-      "expiryDate": "",
-      "pdfUrl": "pdf/device/tim_volantoneh.pdf"
     }
   ],
   "noleggio": [
