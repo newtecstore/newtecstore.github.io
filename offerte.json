@@ -4,6 +4,18 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1795113452603,
+      "active": true,
+      "brand": "ho mobile",
+      "title": "ho che Black friday!",
+      "price": "5,95€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "1 mese in OMAGGIO!!!",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/ho/ho_bf.jpg"
+    },
+    {
       "id": 1795105914743,
       "active": true,
       "brand": "TIM",
