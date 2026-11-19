@@ -1,8 +1,20 @@
 {
   "version": "1.1",
-  "lastUpdated": "16/11/2026",
+  "lastUpdated": "19/11/2026",
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
+    {
+      "id": 1795104500208,
+      "active": true,
+      "brand": "TIM",
+      "title": "Black Friday Realme C100",
+      "price": "4€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Promo 2x1 Realme C100 + Techlife Buds + Telepass omaggio",
+      "expiryDate": "",
+      "pdfUrl": "pdf/tim/tim_c100bf.jpeg"
+    },
     {
       "id": 1794853435138,
       "active": true,
@@ -353,6 +365,54 @@
   ],
   "rateizzi": [
     {
+      "id": 1795104704382,
+      "active": true,
+      "brand": "TIM",
+      "title": "Black Friday Bundle Realme C100x",
+      "price": "4€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Promo 2x1 Realme C100x + Techliife Buds + Telepass omaggio",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/device/tim_c100bf.jpeg"
+    },
+    {
+      "id": 1795104542767,
+      "active": true,
+      "brand": "TIM",
+      "title": "Black Friday Bundle Redmi 17",
+      "price": "4€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Promo 2x1 Redmi 17 + Buds Play 6 + Telepass omaggio",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/device/tim_redmi17bf.jpeg"
+    },
+    {
+      "id": 1795104152835,
+      "active": true,
+      "brand": "TIM",
+      "title": "Black Friday Bundle Samsung A37",
+      "price": "10,00€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Promo 2x1 Samsung A37 + buds 3fe",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/device/tim_a37fe.jpeg"
+    },
+    {
+      "id": 1795104036697,
+      "active": true,
+      "brand": "TIM",
+      "title": "2x1 Moto G57 8/256GB",
+      "price": "6€ x 30 mesi",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Black Friday Due al prezzo di Uno!!!!!",
+      "expiryDate": "",
+      "pdfUrl": "pdf/device/tim_g57bf.jpeg"
+    },
+    {
       "id": 1794825178661,
       "active": true,
       "brand": "TIM",
@@ -366,7 +426,7 @@
     },
     {
       "id": 1794653092694,
-      "active": true,
+      "active": false,
       "brand": "TIM",
       "title": "2x1 Moto G57 8/256GB",
       "price": "6€ x 30 mesi",
