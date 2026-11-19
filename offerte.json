@@ -4,6 +4,18 @@
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
+      "id": 1795105914743,
+      "active": true,
+      "brand": "TIM",
+      "title": "Black Friday Bundle GTAVI",
+      "price": "4,67€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "GTAVI + Controller Dual Sense Wireless",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/devide/tim_gtavibf.png"
+    },
+    {
       "id": 1795104500208,
       "active": true,
       "brand": "TIM",
