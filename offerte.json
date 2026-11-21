@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "lastUpdated": "19/11/2026",
+  "lastUpdated": "21/11/2026",
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
@@ -14,30 +14,6 @@
       "details": "1 mese in OMAGGIO!!!",
       "expiryDate": "2026-11-30",
       "pdfUrl": "pdf/ho/ho_bf.jpg"
-    },
-    {
-      "id": 1795105914743,
-      "active": true,
-      "brand": "TIM",
-      "title": "Black Friday Bundle GTAVI",
-      "price": "4,67€ /mese",
-      "badge": "Novità Mese",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "GTAVI + Controller Dual Sense Wireless",
-      "expiryDate": "2026-11-30",
-      "pdfUrl": "pdf/devide/tim_gtavibf.png"
-    },
-    {
-      "id": 1795104500208,
-      "active": true,
-      "brand": "TIM",
-      "title": "Black Friday Realme C100",
-      "price": "4€ /mese",
-      "badge": "Novità Mese",
-      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
-      "details": "Promo 2x1 Realme C100 + Techlife Buds + Telepass omaggio",
-      "expiryDate": "",
-      "pdfUrl": "pdf/tim/tim_c100bf.jpeg"
     },
     {
       "id": 1794853435138,
@@ -388,6 +364,18 @@
     }
   ],
   "rateizzi": [
+    {
+      "id": 1795105914743,
+      "active": true,
+      "brand": "TIM",
+      "title": "Black Friday Bundle GTAVI",
+      "price": "4,67€ /mese",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "GTAVI + Controller Dual Sense Wireless",
+      "expiryDate": "2026-11-30",
+      "pdfUrl": "pdf/devide/tim_gtavi.png"
+    },
     {
       "id": 1795112754980,
       "active": true,
