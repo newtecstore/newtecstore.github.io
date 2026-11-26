@@ -365,6 +365,18 @@
   ],
   "rateizzi": [
     {
+      "id": 1795683148317,
+      "active": true,
+      "brand": "TIM",
+      "title": "Super Bundle PS5",
+      "price": "27,00€ /mese senza anticipo",
+      "badge": "Novità Mese",
+      "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+      "details": "Sony PS5 con disco + GTA6 + Wolverine + 2° Controller",
+      "expiryDate": "",
+      "pdfUrl": "pdf/device/tim_ps5dual.jpeg"
+    },
+    {
       "id": 1795105914743,
       "active": true,
       "brand": "TIM",
@@ -374,7 +386,7 @@
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "GTAVI + Controller Dual Sense Wireless",
       "expiryDate": "2026-11-30",
-      "pdfUrl": "pdf/device/tim_gtavi.png"
+      "pdfUrl": "pdf/devide/tim_gtavi.png"
     },
     {
       "id": 1795112754980,
