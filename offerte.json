@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "lastUpdated": "21/11/2026",
+  "lastUpdated": "26/11/2026",
   "volantinoUrl": "pdf/volantino.pdf",
   "telefonia": [
     {
@@ -374,7 +374,7 @@
       "badgeColor": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "details": "GTAVI + Controller Dual Sense Wireless",
       "expiryDate": "2026-11-30",
-      "pdfUrl": "pdf/devide/tim_gtavi.png"
+      "pdfUrl": "pdf/device/tim_gtavi.png"
     },
     {
       "id": 1795112754980,
@@ -526,5 +526,6 @@
       "expiryDate": "",
       "pdfUrl": "pdf/accessori.pdf"
     }
-  ]
+  ],
+  "stampa3d": []
 }
