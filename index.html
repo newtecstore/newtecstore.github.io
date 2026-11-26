@@ -118,6 +118,9 @@
         .glow-effect-green:hover {
             box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
         }
+        .glow-effect-indigo:hover {
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.35);
+        }
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -145,33 +148,37 @@
                 </div>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center space-x-1 lg:space-x-1.5">
-                    <button onclick="navigateTo('home')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition hover:text-cyan-400 text-cyan-400" id="nav-home">
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-1">
+                    <button onclick="navigateTo('home')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition hover:text-cyan-400 text-cyan-400" id="nav-home">
                         <i class="fa-solid fa-house mr-1"></i> Home
                     </button>
-                    <button onclick="navigateTo('telefonia')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-telefonia">
-                        <i class="fa-solid fa-mobile-screen-button mr-1"></i> Telefonia & Fibra
+                    <button onclick="navigateTo('telefonia')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-telefonia">
+                        <i class="fa-solid fa-mobile-screen-button mr-1"></i> Telefonia
                     </button>
-                    <button onclick="navigateTo('energia')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-energia">
+                    <button onclick="navigateTo('energia')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-energia">
                         <i class="fa-solid fa-bolt mr-1"></i> Luce & Gas
                     </button>
-                    <button onclick="navigateTo('smartphone')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-smartphone">
-                        <i class="fa-solid fa-cart-shopping mr-1"></i> Promo Devices
+                    <button onclick="navigateTo('smartphone')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-smartphone">
+                        <i class="fa-solid fa-cart-shopping mr-1"></i> Devices
                     </button>
-                    <button onclick="navigateTo('riparazioni')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-riparazioni">
-                        <i class="fa-solid fa-screwdriver-wrench mr-1"></i> Riparazioni Lab
+                    <button onclick="navigateTo('stampa3d')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition text-slate-300 hover:text-indigo-400 flex items-center gap-1" id="nav-stampa3d">
+                        <i class="fa-solid fa-cube text-indigo-400"></i> Stampa 3D
+                        <span class="px-1.5 py-0.5 text-[9px] font-extrabold uppercase rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">Soon</span>
                     </button>
-                    <button onclick="navigateTo('volantino')" class="nav-link px-3 py-2 rounded-lg text-xs lg:text-sm font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-volantino">
+                    <button onclick="navigateTo('riparazioni')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-riparazioni">
+                        <i class="fa-solid fa-screwdriver-wrench mr-1"></i> Lab
+                    </button>
+                    <button onclick="navigateTo('volantino')" class="nav-link px-2.5 py-2 rounded-lg text-xs font-semibold transition text-slate-300 hover:text-cyan-400" id="nav-volantino">
                         <i class="fa-solid fa-book-open mr-1"></i> Volantino
                     </button>
                 </nav>
 
                 <!-- Admin & Contact CTA -->
-                <div class="hidden lg:flex items-center space-x-3">
-                    <button onclick="checkAdminAccess()" class="px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-300 text-xs font-semibold hover:border-cyan-500 hover:text-cyan-400 transition flex items-center gap-2">
-                        <i class="fa-solid fa-lock text-cyan-400"></i> Area Gestore
+                <div class="hidden lg:flex items-center space-x-2.5">
+                    <button onclick="checkAdminAccess()" class="px-3 py-2 rounded-xl border border-slate-700 bg-slate-800/80 text-slate-300 text-xs font-semibold hover:border-cyan-500 hover:text-cyan-400 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-lock text-cyan-400"></i> Gestore
                     </button>
-                    <a href="https://wa.me/390810282087?text=Ciao%20NewTecStore,%20vorrei%20informazioni" target="_blank" class="px-4 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-white text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+                    <a href="https://wa.me/390810282087?text=Ciao%20NewTecStore,%20vorrei%20informazioni" target="_blank" class="px-3.5 py-2 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500 hover:text-white text-xs font-bold transition flex items-center gap-1.5 shadow-lg shadow-emerald-500/10">
                         <i class="fa-brands fa-whatsapp text-sm"></i> Contattaci
                     </a>
                 </div>
@@ -201,6 +208,10 @@
             </button>
             <button onclick="navigateTo('smartphone'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
                 <i class="fa-solid fa-cart-shopping text-cyan-400 w-5"></i> Promo Devices & Accessori
+            </button>
+            <button onclick="navigateTo('stampa3d'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center justify-between">
+                <span class="flex items-center gap-3"><i class="fa-solid fa-cube text-indigo-400 w-5"></i> Stampa 3D Store</span>
+                <span class="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/40">Coming Soon</span>
             </button>
             <button onclick="navigateTo('riparazioni'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg text-base font-semibold text-slate-200 hover:bg-slate-800 flex items-center gap-3">
                 <i class="fa-solid fa-screwdriver-wrench text-cyan-400 w-5"></i> Riparazioni Lab
@@ -240,7 +251,7 @@
                             Benvenuto nel portale di <strong>NewTecStore</strong> (New Tec) a Portici. Sfoglia le tariffe di Telefonia, Fibra, Luce, Gas e scopri i nostri servizi di laboratorio e riparazione smartphone.
                         </p>
 
-                        <!-- CASSELLA DI RICERCA GLOBALE -->
+                        <!-- CASELLA DI RICERCA GLOBALE -->
                         <div class="pt-2 max-w-xl mx-auto">
                             <div class="relative flex items-center">
                                 <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400"></i>
@@ -252,48 +263,58 @@
                         </div>
                     </div>
 
-                    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                        <div onclick="navigateTo('telefonia')" class="glass-card rounded-2xl p-6 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
+                    <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
+                        <div onclick="navigateTo('telefonia')" class="glass-card rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
                             <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
                                 <i class="fa-solid fa-mobile-screen-button"></i>
                             </div>
-                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition">Telefonia & Fibra</h3>
+                            <h3 class="text-base font-bold text-white mb-1 group-hover:text-cyan-400 transition">Telefonia & Fibra</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">WindTre, Iliad, TIM, Sky, Very, Kena, Ho.</p>
                             <span class="inline-flex items-center text-xs font-semibold text-cyan-400">Sfoglia <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
-                        <div onclick="navigateTo('energia')" class="glass-card rounded-2xl p-6 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-green group relative overflow-hidden">
+                        <div onclick="navigateTo('energia')" class="glass-card rounded-2xl p-5 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-green group relative overflow-hidden">
                             <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition">
                                 <i class="fa-solid fa-lightbulb"></i>
                             </div>
-                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-emerald-400 transition">Luce & Gas</h3>
+                            <h3 class="text-base font-bold text-white mb-1 group-hover:text-emerald-400 transition">Luce & Gas</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">Plenitude, Enel, Pulsee, Sinergy e tariffe fisse.</p>
                             <span class="inline-flex items-center text-xs font-semibold text-emerald-400">Scopri <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
-                        <div onclick="navigateTo('smartphone')" class="glass-card rounded-2xl p-6 hover:border-rose-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-red group relative overflow-hidden">
+                        <div onclick="navigateTo('smartphone')" class="glass-card rounded-2xl p-5 hover:border-rose-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-red group relative overflow-hidden">
                             <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-rose-500 group-hover:text-white transition">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
-                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-rose-400 transition">Promo Devices</h3>
+                            <h3 class="text-base font-bold text-white mb-1 group-hover:text-rose-400 transition">Promo Devices</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">Rate, Noleggio Kasko e contanti.</p>
                             <span class="inline-flex items-center text-xs font-semibold text-rose-400">Vedi Prodotti <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
-                        <div onclick="navigateTo('riparazioni')" class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
+                        <div onclick="navigateTo('stampa3d')" class="glass-card rounded-2xl p-5 border-indigo-500/30 hover:border-indigo-400 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect-indigo group relative overflow-hidden">
+                            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-[9px] font-extrabold uppercase tracking-wider">Coming Soon</span>
+                            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-indigo-500 group-hover:text-white transition">
+                                <i class="fa-solid fa-cube"></i>
+                            </div>
+                            <h3 class="text-base font-bold text-white mb-1 group-hover:text-indigo-400 transition">Stampa 3D</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Oggettistica, portachiavi, snodati e gadget.</p>
+                            <span class="inline-flex items-center text-xs font-semibold text-indigo-400">Scopri Novità <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        </div>
+
+                        <div onclick="navigateTo('riparazioni')" class="glass-card rounded-2xl p-5 hover:border-amber-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
                             <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-amber-500 group-hover:text-slate-950 transition">
                                 <i class="fa-solid fa-screwdriver-wrench"></i>
                             </div>
-                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-amber-400 transition">Riparazioni Lab</h3>
+                            <h3 class="text-base font-bold text-white mb-1 group-hover:text-amber-400 transition">Riparazioni Lab</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">Micro-saldatura e ricambi express.</p>
                             <span class="inline-flex items-center text-xs font-semibold text-amber-400">Assistenza <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
 
-                        <div onclick="navigateTo('volantino')" class="glass-card rounded-2xl p-6 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
+                        <div onclick="navigateTo('volantino')" class="glass-card rounded-2xl p-5 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer glow-effect group relative overflow-hidden">
                             <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center text-xl mb-4 group-hover:bg-purple-500 group-hover:text-white transition">
                                 <i class="fa-solid fa-book-open"></i>
                             </div>
-                            <h3 class="text-lg font-bold text-white mb-1 group-hover:text-purple-400 transition">Volantino Mese</h3>
+                            <h3 class="text-base font-bold text-white mb-1 group-hover:text-purple-400 transition">Volantino Mese</h3>
                             <p class="text-slate-400 text-xs leading-relaxed mb-4">Sfoglia il catalogo completo.</p>
                             <span class="inline-flex items-center text-xs font-semibold text-purple-400">Apri <i class="fa-solid fa-arrow-right ml-1"></i></span>
                         </div>
@@ -615,6 +636,99 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-selected-device"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STAMPA 3D SECTION (COMING SOON + CATALOGO DINAMICO) -->
+        <section id="sec-stampa3d" class="view-section hidden py-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <!-- Header Sezione -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-800 pb-6 gap-4">
+                    <div>
+                        <div class="flex items-center gap-2 text-indigo-400 font-bold text-sm mb-1 uppercase tracking-wider">
+                            <i class="fa-solid fa-cube"></i> Novità in Store
+                        </div>
+                        <h2 class="text-3xl font-black text-white">Stampa 3D & Oggettistica</h2>
+                        <p class="text-slate-400 text-sm mt-1">Creazioni stampate in 3D disponibili direttamente nel nostro punto vendita a Portici.</p>
+                    </div>
+                    <span class="px-4 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-extrabold uppercase tracking-wider w-fit flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+                        Coming Soon — In Allestimento
+                    </span>
+                </div>
+
+                <!-- BANNER PRINCIPALE COMING SOON -->
+                <div class="bg-gradient-to-br from-indigo-950/80 via-slate-900 to-slate-900 border border-indigo-500/40 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+                    <div class="absolute -right-12 -top-12 w-72 h-72 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -left-12 -bottom-12 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-bold uppercase tracking-wider">
+                                <i class="fa-solid fa-sparkles"></i> Nuovo Angolo Creativo da NewTecStore
+                            </div>
+                            <h3 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+                                Stiamo preparando la nuova vetrina <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Stampa 3D</span> in negozio!
+                            </h3>
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                A breve troverai in store e su questa pagina una selezione di <strong>stampe 3D già pronte</strong> realizzate direttamente nel nostro laboratorio: portachiavi originali, personaggi snodati, gadget da scrivania e accessori utili per smartphone e casa.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-3 pt-2 justify-center lg:justify-start">
+                                <a href="https://wa.me/390810282087?text=Ciao%20NewTecStore,%20ho%20visto%20la%20novit%C3%A0%20Stampa%203D%20sul%20sito!%20Quando%20saranno%20disponibili%20i%20primi%20articoli%20in%20negozio%3F" target="_blank" class="px-6 py-3.5 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs sm:text-sm text-center transition shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-base"></i> Chiedi Info & Anteprime su WhatsApp
+                                </a>
+                                <button onclick="navigateTo('home')" class="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs sm:text-sm transition border border-slate-700">
+                                    Torna alla Home
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- ANTEPRIMA TIPOLOGIE IN ARRIVO -->
+                        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
+                            <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-2xl flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-key"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Portachiavi & Mini-Gadget</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Idee regalo originali, gadget pop, auto/moto e accessori tascabili pronti al banco.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-2xl flex items-start gap-3.5">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-dragon"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Personaggi & Snodati</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Animaletti articolati, draghi cangianti e modelli antistress da collezione.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-950/80 border border-slate-800 p-4 rounded-2xl flex items-start gap-3.5 sm:col-span-2 lg:col-span-1">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Supporti & Accessori Tech</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Stand per smartphone e smartwatch, organizer cavi e oggettistica da scrivania.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GRIGLIA ARTICOLI 3D (Si popola automaticamente appena inserisci prodotti dal Pannello Gestore) -->
+                <div id="stampa3d-catalog-wrapper" class="hidden space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-cubes text-indigo-400"></i> Disponibili Ora in Store
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-stampa3d"></div>
                 </div>
 
             </div>
@@ -1034,28 +1148,29 @@
                                 <option value="noleggio">🔄 Noleggio Operativo Smartphone</option>
                                 <option value="contanti">💵 Senza Vincolo / Cash</option>
                                 <option value="accessori">🎧 Accessori in Store</option>
+                                <option value="stampa3d">🧊 Stampa 3D & Oggettistica</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-medium text-slate-300 mb-1">Nome Brand / Gestore</label>
-                            <input type="text" id="form-brand" placeholder="es. Apple, Samsung, Pulsee, Sinergy" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Nome Brand / Tipologia</label>
+                            <input type="text" id="form-brand" placeholder="es. Apple, Samsung, Pulsee, Stampa 3D" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Titolo Prodotto / Offerta</label>
-                            <input type="text" id="form-title" placeholder="es. Nuova sim o MNP" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                            <input type="text" id="form-title" placeholder="es. Drago Snodato PLA Silk" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Prezzo / Canone</label>
-                            <input type="text" id="form-price" placeholder="es. a partire da € 4,99" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                            <input type="text" id="form-price" placeholder="es. € 12,00" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-xs font-medium text-slate-300 mb-1">Dettagli / Caratteristiche Chiave</label>
-                        <input type="text" id="form-details" placeholder="es. Prezzo fisso bloccato" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                        <input type="text" id="form-details" placeholder="es. Stampato in negozio, disponibile in vari colori" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -1074,7 +1189,7 @@
                         </div>
                         <div>
                             <label class="block text-xs font-medium text-slate-300 mb-1">Percorso Allegato (PDF, JPG, MP4)</label>
-                            <input type="text" id="form-pdf" placeholder="es. pdf/pulsee.pdf" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
+                            <input type="text" id="form-pdf" placeholder="es. img/drago3d.jpg" required class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2.5 text-sm text-white focus:border-cyan-500 outline-none">
                         </div>
                     </div>
 
@@ -1097,11 +1212,13 @@
     <!-- LOGICA JAVASCRIPT CON STRUTTURAZIONE RIGIDA DEL JSON -->
     <script>
         const ADMIN_PIN = "1976"; // Password riservata gestore
-        let currentVersion = "1.1"; // Versione tecnica del sito
+        let currentVersion = "1.2"; // Versione tecnica del sito
+
+        const ALL_CATEGORIES = ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori', 'stampa3d'];
 
         let fallbackData = {
-            version: "1.1",
-            lastUpdated: "09/11/2026",
+            version: "1.2",
+            lastUpdated: "25/11/2026",
             volantinoUrl: "pdf/volantino.pdf",
             telefonia: [
                 { id: 1, active: true, brand: "WindTre", title: "Super Fibra & Mobile", price: "€22,99 / mese", badge: "Promo Speciale", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Fibra fino a 2.5 Gbps + Giga Illimitati per i già clienti.", pdfUrl: "pdf/wind3_fibra.pdf", expiryDate: "" },
@@ -1122,7 +1239,8 @@
             ],
             accessori: [
                 { id: 401, active: true, brand: "JBL", title: "Cuffie Tune Flex TWS", price: "€79,99", badge: "Novità Mese", badgeColor: "bg-purple-500/20 text-purple-400 border-purple-500/30", details: "Cancellazione attiva del rumore, custodia di ricarica.", pdfUrl: "pdf/accessori.pdf", expiryDate: "" }
-            ]
+            ],
+            stampa3d: []
         };
 
         let currentData = fallbackData;
@@ -1140,6 +1258,7 @@
                 } else {
                     currentData = fallbackData;
                 }
+                if(!currentData.stampa3d) currentData.stampa3d = [];
                 renderAllGrids();
                 updateVolantinoView();
                 aggiornaInfoVersione(currentVersion, "Locale (Modificabile)");
@@ -1151,6 +1270,7 @@
                     })
                     .then(data => {
                         currentData = data;
+                        if(!currentData.stampa3d) currentData.stampa3d = [];
                         if(data.version) currentVersion = data.version;
                         renderAllGrids();
                         updateVolantinoView();
@@ -1179,12 +1299,12 @@
             if(target) target.classList.remove('hidden');
 
             document.querySelectorAll('.nav-link').forEach(btn => {
-                btn.classList.remove('text-cyan-400');
+                btn.classList.remove('text-cyan-400', 'text-indigo-400');
                 btn.classList.add('text-slate-300');
             });
             const activeNav = document.getElementById('nav-' + sectionId);
             if(activeNav) {
-                activeNav.classList.add('text-cyan-400');
+                activeNav.classList.add(sectionId === 'stampa3d' ? 'text-indigo-400' : 'text-cyan-400');
                 activeNav.classList.remove('text-slate-300');
             }
 
@@ -1258,6 +1378,7 @@
             else if (b.includes('samsung')) { fileName = 'samsung.png'; fallbackBg = 'bg-[#1428A0]'; }
             else if (b.includes('xiaomi')) { fileName = 'xiaomi.png'; fallbackBg = 'bg-orange-500'; }
             else if (b.includes('oppo')) { fileName = 'oppo.png'; fallbackBg = 'bg-emerald-600'; }
+            else if (b.includes('3d') || b.includes('stampa')) { fallbackBg = 'bg-indigo-600'; fallbackText = '3D'; }
 
             const sizeClass = isLargeCard ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-2xl p-2.5' : 'w-12 h-12 rounded-xl p-1.5';
             const fallbackSizeClass = isLargeCard ? 'w-24 h-24 sm:w-28 sm:h-28 rounded-2xl text-lg font-black' : 'w-12 h-12 rounded-xl text-xs font-black';
@@ -1413,6 +1534,17 @@
             renderTelefoniaBrandCards();
             const activeEnergia = (currentData.energia || []).filter(i => i.active !== false);
             renderGrid('energia', activeEnergia, 'grid-energia');
+
+            const activeStampa3d = (currentData.stampa3d || []).filter(i => i.active !== false);
+            const stampa3dWrapper = document.getElementById('stampa3d-catalog-wrapper');
+            if (stampa3dWrapper) {
+                if (activeStampa3d.length > 0) {
+                    stampa3dWrapper.classList.remove('hidden');
+                    renderGrid('stampa3d', activeStampa3d, 'grid-stampa3d');
+                } else {
+                    stampa3dWrapper.classList.add('hidden');
+                }
+            }
         }
 
         function renderGrid(category, items, gridId) {
@@ -1491,7 +1623,7 @@
                     </div>
                     <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
                         <button onclick="openPdfViewer('${item.pdfUrl}', '${item.brand.replace(/'/g, "\\'")} - ${item.title.replace(/'/g, "\\'")}')" class="flex-grow py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 text-xs font-bold transition flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-file-invoice text-cyan-400"></i> Vedi Prospetto
+                            <i class="fa-solid fa-file-invoice text-cyan-400"></i> Vedi Dettagli
                         </button>
                         <a href="https://wa.me/390810282087?text=${whatsAppMsg}" target="_blank" class="p-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500 text-emerald-400 hover:text-white transition shadow-md" title="Richiedi offerta su WhatsApp">
                             <i class="fa-brands fa-whatsapp text-base"></i>
@@ -1539,9 +1671,8 @@
 
             const q = query.toLowerCase();
             let allResults = [];
-            const categories = ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'];
             
-            categories.forEach(cat => {
+            ALL_CATEGORIES.forEach(cat => {
                 if(currentData[cat] && Array.isArray(currentData[cat])) {
                     const matches = currentData[cat].filter(i => 
                         i.active !== false && (
@@ -1637,7 +1768,8 @@
                 { key: 'rateizzi', name: '📄 Smartphone a Rate (Gestore)' },
                 { key: 'noleggio', name: '🔄 Noleggio Operativo Smartphone' },
                 { key: 'contanti', name: '💵 Senza Vincolo / Cash' },
-                { key: 'accessori', name: '🎧 Accessori in Store' }
+                { key: 'accessori', name: '🎧 Accessori in Store' },
+                { key: 'stampa3d', name: '🧊 Stampa 3D & Oggettistica' }
             ];
 
             categories.forEach(cat => {
@@ -1707,7 +1839,7 @@
                 item = currentData[category].find(i => String(i.id) === String(id));
             }
             if (!item) {
-                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                ALL_CATEGORIES.forEach(cat => {
                     const found = currentData[cat] ? currentData[cat].find(i => String(i.id) === String(id)) : null;
                     if (found) {
                         item = found;
@@ -1743,7 +1875,7 @@
                 item = currentData[category].find(i => String(i.id) === String(id));
             }
             if (!item) {
-                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                ALL_CATEGORIES.forEach(cat => {
                     const found = currentData[cat] ? currentData[cat].find(i => String(i.id) === String(id)) : null;
                     if (found) {
                         item = found;
@@ -1772,7 +1904,7 @@
 
         function deleteOffer(category, id) {
             if(confirm('Sei sicuro di voler eliminare questa offerta?')) {
-                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                ALL_CATEGORIES.forEach(cat => {
                     if (currentData[cat]) {
                         currentData[cat] = currentData[cat].filter(item => String(item.id) !== String(id));
                     }
@@ -1808,7 +1940,7 @@
                 let foundCategory = null;
                 let foundIndex = -1;
 
-                ['telefonia', 'energia', 'rateizzi', 'noleggio', 'contanti', 'accessori'].forEach(cat => {
+                ALL_CATEGORIES.forEach(cat => {
                     if (currentData[cat]) {
                         const idx = currentData[cat].findIndex(i => String(i.id) === String(editId));
                         if(idx !== -1) {
@@ -1863,7 +1995,7 @@
             const dataOggi = `${giorno}/${mese}/${anno}`;
 
             const exportObj = {
-                version: currentVersion || "1.1",
+                version: currentVersion || "1.2",
                 lastUpdated: dataOggi,
                 volantinoUrl: currentData.volantinoUrl || "pdf/volantino.pdf",
                 telefonia: currentData.telefonia || [],
@@ -1871,7 +2003,8 @@
                 rateizzi: currentData.rateizzi || [],
                 noleggio: currentData.noleggio || [],
                 contanti: currentData.contanti || [],
-                accessori: currentData.accessori || []
+                accessori: currentData.accessori || [],
+                stampa3d: currentData.stampa3d || []
             };
 
             const datiSalvati = JSON.stringify(exportObj, null, 2);
